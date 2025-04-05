@@ -1,5 +1,8 @@
+import { useForm } from '../contexts/FormContext';
+
 export default function FooterSection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
+  const { openForm } = useForm();
   
   return (
     <footer className="w-full bg-black text-white py-12 md:py-16">
@@ -7,7 +10,7 @@ export default function FooterSection() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 mb-12">
           {/* Left Section */}
           <div className="flex flex-col items-start">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started For Free</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started</h3>
             
             <div className="space-y-3 mb-8">
               <a href="#" className="block text-lg text-gray-400 hover:text-white transition-colors">About</a>
@@ -17,10 +20,11 @@ export default function FooterSection() {
             
             <div className="flex justify-end mt-14 -ml-2">
               <button 
+                onClick={openForm}
                 className="px-8 py-3 rounded-full font-medium text-white text-base"
                 style={{ background: gradient }}
               >
-                Join For Free
+                Explore AEL
               </button>
             </div>
           </div>

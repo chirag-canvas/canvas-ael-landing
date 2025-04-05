@@ -1,9 +1,13 @@
+import { useForm } from '../contexts/FormContext';
+
 export default function LandingPage() {
+  const { openForm } = useForm();
+  
   return (
     <div className="min-h-screen bg-black relative overflow-hidden text-white font-montserrat">
-      {/* Canvas Logo in top-left corner */}
-      <div className="absolute top-10 left-20 z-50">
-        <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-16" />
+      {/* Canvas Logo in top-left corner - responsive positioning */}
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-8 md:top-10 md:left-20 z-50">
+        <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-10 sm:w-12 md:w-16" />
       </div>
       
       {/* Improved gradient background with distinct left/right colors */}
@@ -19,23 +23,83 @@ export default function LandingPage() {
         <div className="absolute inset-0 border-[50px] border-black opacity-20 blur-[80px]"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="container mx-auto py-8 px-6 md:px-8 flex flex-wrap justify-between items-center relative z-10">
-        <div className="flex items-center">
-          {/* Logo space - actual logo is positioned absolutely above */}
-        </div>
-        <div className="flex flex-wrap items-center gap-4 md:gap-8 mt-5">
+      {/* Mobile menu button - only visible on small screens */}
+      <div className="md:hidden fixed top-4 right-4 z-50">
+        <button 
+          className="text-white bg-black bg-opacity-50 p-2 rounded-md"
+          onClick={() => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+              mobileMenu.classList.toggle('hidden');
+            }
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile menu - hidden by default */}
+      <div id="mobile-menu" className="fixed inset-0 bg-black bg-opacity-90 z-40 hidden flex flex-col items-center justify-center md:hidden">
+        <button 
+          className="absolute top-4 right-4 text-white"
+          onClick={() => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+              mobileMenu.classList.add('hidden');
+            }
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div className="flex flex-col items-center gap-8 text-xl">
           <a href="#" className="font-medium">Solutions</a>
           <a href="#" className="font-medium">Pricing</a>
           <a href="#" className="font-medium text-gray-400">Resources</a>
           <a href="#" className="font-medium">FAQ</a>
-          <a href="#" className="px-5 py-2 md:px-6 md:py-2.5 rounded-full font-medium text-white whitespace-nowrap" style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}>Join For Free</a>
+          <button 
+            onClick={() => {
+              const mobileMenu = document.getElementById('mobile-menu');
+              if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+              }
+              openForm();
+            }}
+            className="px-6 py-3 rounded-full font-medium text-white mt-4" 
+            style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}
+          >
+            Explore AEL
+          </button>
+        </div>
+      </div>
+
+      {/* Navigation - desktop version */}
+      <nav className="container mx-auto py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-8 flex flex-wrap justify-between items-center relative z-10">
+        <div className="flex items-center">
+          {/* Logo space - actual logo is positioned absolutely above */}
+          <div className="w-10 sm:w-12 md:w-16"></div>
+        </div>
+        <div className="hidden md:flex flex-wrap items-center gap-4 lg:gap-8">
+          <a href="#" className="font-medium hover:opacity-80 transition-opacity">Solutions</a>
+          <a href="#" className="font-medium hover:opacity-80 transition-opacity">Pricing</a>
+          <a href="#" className="font-medium text-gray-400 hover:text-white transition-colors">Resources</a>
+          <a href="#" className="font-medium hover:opacity-80 transition-opacity">FAQ</a>
+          <button 
+            onClick={openForm}
+            className="px-4 py-2 lg:px-6 lg:py-2.5 rounded-full font-medium text-white whitespace-nowrap hover:opacity-90 transition-opacity" 
+            style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}
+          >
+            Explore AEL
+          </button>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-6 md:px-8 py-12 md:py-20 text-center relative z-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 max-w-5xl mx-auto py-2" style={{
+      <main className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-20 text-center relative z-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 max-w-5xl mx-auto py-2" style={{
           background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -43,19 +107,23 @@ export default function LandingPage() {
         }}>
           Turn user interactions into high-value data & revenue
         </h1>
-        <p className="text-base md:text-lg mb-6 -mt-2 max-w-2xl mx-auto">Transform Insights to Loyalty & Engagement</p>
-        <button className="px-6 py-3 rounded-full font-medium text-white" style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}>
-          Join For Free
+        <p className="text-sm sm:text-base md:text-lg mb-6 -mt-2 max-w-2xl mx-auto">Transform Insights to Loyalty & Engagement</p>
+        <button 
+          onClick={openForm}
+          className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-white hover:opacity-90 transition-opacity" 
+          style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}
+        >
+          Explore AEL
         </button>
 
         {/* Video Area (replacing Laptop Image) */}
-        <div className="mt-16 relative">
+        <div className="mt-8 sm:mt-12 md:mt-16 relative">
           <div className="absolute inset-0 w-full h-full flex items-center justify-center">
             <div className="w-[80%] h-[80%] border-2 border-dashed border-blue-400 rounded-[50%] opacity-30"></div>
           </div>
           
-          <div className="relative z-10 flex justify-center">
-            <div className="w-full max-w-[600px]">
+          <div className="relative z-10 flex justify-center px-4 sm:px-6 md:px-0">
+            <div className="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[600px]">
               <video 
                 className="w-full rounded-lg shadow-lg"
                 autoPlay
@@ -64,7 +132,7 @@ export default function LandingPage() {
                 playsInline
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.style.height = '300px';
+                  e.target.style.height = '200px';
                   e.target.style.background = '#000';
                   e.target.style.border = '2px solid #333';
                   e.target.style.borderRadius = '8px';

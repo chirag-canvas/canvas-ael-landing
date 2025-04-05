@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
+import { useForm } from '../contexts/FormContext';
 
 export default function StrategySection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
   const [activeFeature, setActiveFeature] = useState(0);
   const videoRef = useRef(null);
+  const { openForm } = useForm();
   
   const features = [
     {
       title: "Data Activation Points",
       desc: "(Forms, Polls, Promo Code)",
-      videoSrc: "/Landing page/AEL Built for Strategy/Data Capture Points.mp4", // Fixed video path
+      videoSrc: "/Landing page/AEL Built for Strategy/Data Capture Points.mp4",
       icon: (
         <path
           strokeLinecap="round"
@@ -22,7 +24,7 @@ export default function StrategySection() {
     {
       title: "Engagement Signals",
       desc: "(Icons, Quizzes, Feedback)",
-      videoSrc: "/Landing page/AEL Built for Strategy/Engagement Signals.mp4", // Fixed video path
+      videoSrc: "/Landing page/AEL Built for Strategy/Engagement Signals.mp4",
       icon: (
         <path
           strokeLinecap="round"
@@ -35,7 +37,7 @@ export default function StrategySection() {
     {
       title: "Revenue Amplifiers",
       desc: "(Payments, Donation, Ad Free Access)",
-      videoSrc: "/Landing page/AEL Built for Strategy/Revenue Amplifiers.mp4", // Fixed video path
+      videoSrc: "/Landing page/AEL Built for Strategy/Revenue Amplifiers.mp4",
       icon: (
         <path
           strokeLinecap="round"
@@ -48,7 +50,7 @@ export default function StrategySection() {
     {
       title: "AEL Suite",
       desc: "(All-in-one customizable\nAdaptive Engagement Layer)",
-      videoSrc: "/Landing page/AEL Built for Strategy/AEL Suite.mp4", // Fixed video path
+      videoSrc: "/Landing page/AEL Built for Strategy/AEL Suite.mp4",
       icon: (
         <path
           strokeLinecap="round"
@@ -60,11 +62,11 @@ export default function StrategySection() {
     },
   ];
 
-  // Auto switch features every 5 seconds
+  // Auto switch features every 20 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % features.length);
-    }, 20000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -79,52 +81,52 @@ export default function StrategySection() {
   }, [activeFeature]);
 
   return (
-    <div className="relative bg-black text-white px-4 md:px-8 py-20 overflow-hidden">
+    <div className="relative bg-black text-white px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Gradient Glow Background */}
       <div className="absolute inset-0 flex justify-center items-start z-0">
-        <div className="w-[400px] h-[200px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6cc2ff] via-[#37ffb6] to-transparent opacity-60 blur-[150px]"></div>
+        <div className="w-[200px] sm:w-[300px] md:w-[400px] h-[150px] sm:h-[180px] md:h-[200px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6cc2ff] via-[#37ffb6] to-transparent opacity-60 blur-[150px]"></div>
       </div>
 
       <div className="relative z-10 container mx-auto max-w-6xl">
-        {/* Title Section - Fixed visibility */}
-        <div className="text-center mb-16">
+        {/* Title Section */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 p-1"
             style={{
               background: gradient,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              display: "block", // Ensure visibility
+              display: "block",
             }}
           >
             AEL Built for Strategy & Scale
           </h1>
-          <p className="text-xl text-gray-200">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200">
             Turn Passive Viewers to Actionable Data
           </p>
         </div>
 
         {/* Content Container */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-8">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-8 lg:gap-16 mb-8">
           {/* Features */}
-          <div className="w-full md:w-[45%] space-y-8">
+          <div className="w-full md:w-[45%] space-y-4 sm:space-y-6 md:space-y-8 order-2 md:order-1">
             {features.map((feature, idx) => (
               <div 
                 key={idx} 
-                className={`flex items-start space-x-5 cursor-pointer transition-all duration-300 ${activeFeature === idx ? 'scale-105' : 'opacity-80 hover:opacity-100'}`}
+                className={`flex items-start space-x-3 sm:space-x-4 md:space-x-5 cursor-pointer transition-all duration-300 ${activeFeature === idx ? 'scale-105' : 'opacity-80 hover:opacity-100'}`}
                 onClick={() => setActiveFeature(idx)}
               >
                 <div className="relative">
                   {activeFeature === idx && (
                     <div
-                      className="w-1 h-20 absolute -left-3 top-0"
+                      className="w-1 h-12 sm:h-16 md:h-20 absolute -left-2 sm:-left-3 top-0"
                       style={{ background: gradient }}
                     ></div>
                   )}
-                  <div className={`w-14 h-14 rounded-full border-2 ${activeFeature === idx ? 'border-white' : 'border-gray-400'} flex items-center justify-center bg-black transition-all duration-300`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border-2 ${activeFeature === idx ? 'border-white' : 'border-gray-400'} flex items-center justify-center bg-black transition-all duration-300`}>
                     <svg
-                      className={`w-7 h-7 ${activeFeature === idx ? 'text-white' : 'text-gray-400'}`}
+                      className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 ${activeFeature === idx ? 'text-white' : 'text-gray-400'}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -135,10 +137,10 @@ export default function StrategySection() {
                   </div>
                 </div>
                 <div>
-                  <h3 className={`text-2xl font-bold mb-1 ${activeFeature === idx ? 'text-white' : 'text-gray-300'}`}>
+                  <h3 className={`text-lg sm:text-xl md:text-2xl font-bold mb-1 ${activeFeature === idx ? 'text-white' : 'text-gray-300'}`}>
                     {feature.title}
                   </h3>
-                  <p className={`${activeFeature === idx ? 'text-gray-200' : 'text-gray-400'} whitespace-pre-line`}>
+                  <p className={`text-xs sm:text-sm md:text-base ${activeFeature === idx ? 'text-gray-200' : 'text-gray-400'} whitespace-pre-line`}>
                     {feature.desc}
                   </p>
                 </div>
@@ -146,15 +148,15 @@ export default function StrategySection() {
             ))}
           </div>
 
-          {/* Video Card Stack - Fixed dimensions to match video width */}
-          <div className="w-full md:w-[55%] h-[450px] relative flex justify-center md:justify-start">
+          {/* Video Card Stack */}
+          <div className="w-full sm:w-[80%] md:w-[55%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] relative flex justify-center md:justify-start order-1 md:order-2 mb-8 md:mb-0">
             <div className="relative w-full h-full perspective">
-              {/* Background cards - Adjusted dimensions */}
-              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#2f2f2f] rounded-2xl shadow-lg transform translate-x-20 translate-y-20 scale-[0.97] transition-all duration-700"></div>
-              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#3d3d3d] rounded-2xl shadow-lg transform translate-x-10 translate-y-10 scale-[0.985] transition-all duration-700"></div>
+              {/* Background cards - Responsive dimensions */}
+              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#2f2f2f] rounded-xl sm:rounded-2xl shadow-lg transform translate-x-12 sm:translate-x-16 md:translate-x-20 translate-y-12 sm:translate-y-16 md:translate-y-20 scale-[0.97] transition-all duration-700"></div>
+              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#3d3d3d] rounded-xl sm:rounded-2xl shadow-lg transform translate-x-6 sm:translate-x-8 md:translate-x-10 translate-y-6 sm:translate-y-8 md:translate-y-10 scale-[0.985] transition-all duration-700"></div>
               
-              {/* Main video card - Fixed dimensions */}
-              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#4a4a4a] rounded-2xl shadow-xl z-10 overflow-hidden transition-all duration-500 transform-gpu hover:scale-[1.02]">
+              {/* Main video card */}
+              <div className="absolute right-0 top-0 w-[80%] h-[85%] bg-[#4a4a4a] rounded-xl sm:rounded-2xl shadow-xl z-10 overflow-hidden transition-all duration-500 transform-gpu hover:scale-[1.02]">
                 <video 
                   ref={videoRef}
                   className="w-full h-full object-cover"
@@ -167,8 +169,8 @@ export default function StrategySection() {
                 </video>
                 
                 {/* Overlay with feature name */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                  <h3 className="text-xl font-bold">{features[activeFeature].title}</h3>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2 sm:p-3 md:p-4">
+                  <h3 className="text-sm sm:text-base md:text-xl font-bold">{features[activeFeature].title}</h3>
                 </div>
               </div>
             </div>
@@ -176,12 +178,13 @@ export default function StrategySection() {
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-10 sm:mt-16 md:mt-20">
           <button
-            className="px-8 py-3 rounded-full font-medium text-white"
+            onClick={openForm}
+            className="px-6 sm:px-7 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-white text-sm sm:text-base transition-transform hover:scale-105"
             style={{ background: gradient }}
           >
-            Join For Free
+            Explore AEL
           </button>
         </div>
       </div>

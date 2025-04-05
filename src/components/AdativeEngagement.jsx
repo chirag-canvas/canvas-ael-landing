@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export default function AdativeEngagement() {
+export default function AdaptiveEngagement() {
+  // Fixed typo in function name from AdativeEngagement to AdaptiveEngagement
   const [activeTab, setActiveTab] = useState('ott');
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
   const blueGreenGradient = "linear-gradient(120deg, rgba(54, 134, 149, 0.8), rgba(110, 195, 119, 0.8))";
@@ -57,22 +58,22 @@ export default function AdativeEngagement() {
   ];
   
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-6 md:px-10 relative flex items-center justify-center">
+    <div className="min-h-screen bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 relative flex items-center justify-center">
       {/* Main Content Container with Light Black Background */}
-      <div className="w-[98%] lg:w-[95%] bg-gray-900/60 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-gray-800">
-        {/* Heading Section - Reduced size */}
-        <div className="container mx-auto text-center max-w-6xl mb-16">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+      <div className="w-full sm:w-[98%] lg:w-[95%] bg-gray-900/60 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 backdrop-blur-sm border border-gray-800">
+        {/* Heading Section - Responsive sizes */}
+        <div className="container mx-auto text-center max-w-6xl mb-8 sm:mb-12 md:mb-16">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text"
             }}>
-              Adative Engagement Layer (AEL)
+              Adaptive Engagement Layer (AEL)
             </span>
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
@@ -84,11 +85,11 @@ export default function AdativeEngagement() {
           </h2>
         </div>
 
-        {/* Category Buttons - Updated with gradient borders for inactive buttons */}
-        <div className="flex justify-center gap-6 mb-16">
+        {/* Category Buttons - Responsive sizing and stacking on small screens */}
+        <div className="flex lg:flex-row sm:flex-col justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16">
           <button 
             onClick={() => setActiveTab('ott')}
-            className="px-10 py-4 rounded-full font-medium text-white min-w-[200px] transition-all duration-300 text-xl relative" 
+            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-medium text-white min-w-0 sm:min-w-[160px] md:min-w-[200px] transition-all duration-300 text-base sm:text-lg md:text-xl relative" 
             style={{ 
               background: activeTab === 'ott' ? gradient : 'transparent',
               position: 'relative',
@@ -113,7 +114,7 @@ export default function AdativeEngagement() {
           </button>
           <button 
             onClick={() => setActiveTab('media')}
-            className="px-10 py-4 rounded-full font-medium text-white min-w-[200px] transition-all duration-300 text-xl relative" 
+            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-medium text-white min-w-0 sm:min-w-[160px] md:min-w-[200px] transition-all duration-300 text-base sm:text-lg md:text-xl relative" 
             style={{ 
               background: activeTab === 'media' ? gradient : 'transparent',
               position: 'relative',
@@ -138,11 +139,11 @@ export default function AdativeEngagement() {
           </button>
         </div>
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {(activeTab === 'ott' ? ottContent : mediaContent).map((card, index) => (
             <div 
               key={index}
-              className="rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 transition-all"
+              className="rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 transition-all"
               style={{ 
                 border: "2px solid transparent",
                 backgroundImage: `linear-gradient(to bottom, #1a202c, #000), ${blueGreenGradient}`,
@@ -150,7 +151,7 @@ export default function AdativeEngagement() {
                 backgroundClip: "padding-box, border-box",
                 boxShadow: '0 0 15px rgba(54, 134, 149, 0.5)'
               }}>
-              <div className="h-64 bg-black relative overflow-hidden">
+              <div className="h-48 sm:h-56 md:h-64 bg-black relative overflow-hidden">
                 <img 
                   src={card.image}
                   alt={card.title}
@@ -175,17 +176,17 @@ export default function AdativeEngagement() {
                   }}
                 />
               </div>
-              <div className="p-6">
-                <div className="bg-gray-800 inline-flex items-center px-4 py-2 rounded-full mb-4 gap-2">
-                  <span className={`w-5 h-5 ${card.dotColor} rounded-full`}></span>
-                  <span className="font-bold" style={{ 
+              <div className="p-4 sm:p-6">
+                <div className="bg-gray-800 inline-flex items-center px-3 sm:px-4 py-1 sm:py-2 rounded-full mb-2 sm:mb-4 gap-1 sm:gap-2">
+                  <span className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${card.dotColor} rounded-full`}></span>
+                  <span className="font-bold text-xs sm:text-sm" style={{ 
                     background: gradient,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text"
                   }}>{card.title}</span>
                 </div>
-                <h3 className="text-xl text-gray-200 mb-2">{card.description}</h3>
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-2">{card.description}</h3>
               </div>
             </div>
           ))}

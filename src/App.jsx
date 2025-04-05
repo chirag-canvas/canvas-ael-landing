@@ -8,12 +8,15 @@ import MetricsSection from './components/MetricsSection';
 import AELActionSection from './components/AELActionSection';
 import FeaturedOnSection from './components/FeaturedOnSection';
 import FooterSection from './components/FooterSection';
+import ContactFormOverlay from './components/ContactFormOverlay';
+import { FormProvider, useForm } from './contexts/FormContext';
 import './index.css';
 
-export default function App() {
+function AppContent() {
   const sectionsRef = useRef([]);
   const [activeSection, setActiveSection] = useState(0);
   const totalSections = 9;
+  const { isFormOpen, closeForm } = useForm();
   
   // Set up refs array
   useEffect(() => {
@@ -159,6 +162,17 @@ export default function App() {
       >
         <FooterSection />
       </section>
+
+      {/* Contact Form Overlay */}
+      <ContactFormOverlay isOpen={isFormOpen} onClose={closeForm} />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <FormProvider>
+      <AppContent />
+    </FormProvider>
   );
 }
