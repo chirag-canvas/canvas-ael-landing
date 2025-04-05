@@ -1,15 +1,28 @@
 import { useForm } from '../contexts/FormContext';
+import { useState, useEffect } from 'react';
 
 export default function FooterSection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
   const { openForm } = useForm();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile(); // Initial check
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   return (
     <footer className="w-full bg-black text-white py-12 md:py-16">
       <div className="w-full px-6 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 mb-12">
+        <div className="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-4 mb-12">
           {/* Left Section */}
-          <div className="flex flex-col items-start">
+          <div className={`flex flex-col ${isMobile ? 'items-center justify-center text-center' : 'items-start'}`}>
             <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started</h3>
             
             <div className="space-y-3 mb-8">
@@ -18,7 +31,7 @@ export default function FooterSection() {
               <a href="#" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</a>
             </div>
             
-            <div className="flex justify-end mt-14 -ml-2">
+            <div className={`flex ${isMobile ? 'justify-center ml-0' : 'justify-end -ml-2'} mt-14`}>
               <button 
                 onClick={openForm}
                 className="px-8 py-3 rounded-full font-medium text-white text-base"
@@ -30,15 +43,15 @@ export default function FooterSection() {
           </div>
           
           {/* Right Section */}
-          <div className="flex flex-col items-start md:items-end">
+          <div className={`flex flex-col ${isMobile ? 'items-center justify-center text-center mt-8' : 'items-start md:items-end'}`}>
             <h3 className="text-2xl md:text-3xl font-bold mb-5">Canvas Space Inc.</h3>
             
-            <p className="text-lg text-gray-400 mb-2 md:text-right">5548, Abington Drive, Newark,<br/>California, 94560</p>
+            <p className={`text-lg text-gray-400 mb-2 ${isMobile ? 'text-center' : 'md:text-right'}`}>5548, Abington Drive, Newark,<br/>California, 94560</p>
             
             <a href="mailto:hello@canvas.space" className="text-lg text-gray-400 hover:text-white mb-6">hello@canvas.space</a>
             
             {/* Social Icons */}
-            <div className="flex space-x-4 mb-8">
+            <div className={`flex space-x-4 mb-8 ${isMobile ? 'justify-center' : ''}`}>
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
@@ -61,21 +74,22 @@ export default function FooterSection() {
               </a>
             </div>
             
-            <div className="flex justify-end md:pr-0">
+            <div className={`flex ${isMobile ? 'justify-center' : 'justify-end md:pr-0'}`}>
               <div className="gradient-border-container relative">
                 <button 
                   className="px-8 py-3 rounded-full font-medium bg-transparent relative text-base"
                 >
-                  <span 
-                    style={{
-                      background: gradient,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text"
-                    }}
-                  >
-                    Contact us
-                  </span>
+                  <span
+                  style={{
+                    background: gradient,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    display: "inline-block"
+                  }}
+                >
+                  Contact us
+                </span>
                 </button>
                 <style jsx="true">{`
                   .gradient-border-container {
