@@ -96,7 +96,7 @@ function AppContent() {
       {/* First section - Landing Page */}
       <section 
         ref={el => sectionsRef.current[0] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <LandingPage />
       </section>
@@ -104,7 +104,7 @@ function AppContent() {
       {/* Second section - Adative Engagement */}
       <section 
         ref={el => sectionsRef.current[1] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <AdativeEngagement />
       </section>
@@ -112,7 +112,7 @@ function AppContent() {
       {/* Third section - Strategy Section */}
       <section 
         ref={el => sectionsRef.current[2] = el}
-        className="min-h-screen" 
+        className="bg-gray-900" 
       >
         <StrategySection />
       </section>
@@ -120,7 +120,7 @@ function AppContent() {
       {/* Fourth section - Flexible Deployment */}
       <section 
         ref={el => sectionsRef.current[3] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <FlexibleDeploymentSection />
       </section>
@@ -128,7 +128,7 @@ function AppContent() {
       {/* Fifth section - AEL Action */}
       <section 
         ref={el => sectionsRef.current[4] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <AELActionSection />
       </section>
@@ -136,7 +136,7 @@ function AppContent() {
       {/* Sixth section - Why AEL */}
       <section 
         ref={el => sectionsRef.current[5] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <WhyAELSection />
       </section>
@@ -144,7 +144,7 @@ function AppContent() {
       {/* Seventh section - Metrics */}
       <section 
         ref={el => sectionsRef.current[6] = el}
-        className="min-h-screen" 
+        className="bg-black" 
       >
         <MetricsSection />
       </section>
@@ -152,6 +152,7 @@ function AppContent() {
       {/* Eighth section - Featured On */}
       <section 
         ref={el => sectionsRef.current[7] = el}
+        className="bg-black"
       >
         <FeaturedOnSection />
       </section>
@@ -159,6 +160,7 @@ function AppContent() {
       {/* Ninth section - Footer */}
       <section 
         ref={el => sectionsRef.current[8] = el}
+        className="bg-black"
       >
         <FooterSection />
       </section>
