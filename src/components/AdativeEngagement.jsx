@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export default function AdativeEngagement() {
   const [activeTab, setActiveTab] = useState('ott');
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
+  const blueGreenGradient = "linear-gradient(120deg, rgba(54, 134, 149, 0.8), rgba(110, 195, 119, 0.8))";
 
   // Auto switch tabs every 3 seconds
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function AdativeEngagement() {
       dotColor: "bg-blue-500"
     },
     {
-      title: "SUBSCRIPTION MANAGEMENT PLATFORMS",
+      title: "SUBSCRIPTION MANAGEMENT",
       description: "Turn Churn into Loyalty with Targeted Engagement.",
       image: "/Landing page/AEL for First-Party Data/Subscription management platform.png",
       dotColor: "bg-yellow-500"
@@ -56,12 +57,12 @@ export default function AdativeEngagement() {
   ];
   
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-4 md:px-8 relative flex items-center justify-center">
+    <div className="min-h-screen bg-black text-white py-20 px-6 md:px-10 relative flex items-center justify-center">
       {/* Main Content Container with Light Black Background */}
-      <div className="w-[95%] lg:w-[90%] bg-gray-900/60 rounded-3xl p-6 md:p-10 backdrop-blur-sm border border-gray-800">
-        {/* Heading Section */}
-        <div className="container mx-auto text-center max-w-5xl mb-12">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold mb-2">
+      <div className="w-[98%] lg:w-[95%] bg-gray-900/60 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-gray-800">
+        {/* Heading Section - Reduced size */}
+        <div className="container mx-auto text-center max-w-6xl mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
@@ -71,7 +72,7 @@ export default function AdativeEngagement() {
               Adative Engagement Layer (AEL)
             </span>
           </h1>
-          <h2 className="text-3xl md:text-3xl lg:text-4xl font-bold">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
@@ -83,35 +84,60 @@ export default function AdativeEngagement() {
           </h2>
         </div>
 
-        {/* Category Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        {/* Category Buttons - Updated with gradient borders for inactive buttons */}
+        <div className="flex justify-center gap-6 mb-16">
           <button 
             onClick={() => setActiveTab('ott')}
-            className="px-8 py-3 rounded-full font-medium text-white min-w-[180px] transition-all duration-300" 
+            className="px-10 py-4 rounded-full font-medium text-white min-w-[200px] transition-all duration-300 text-xl relative" 
             style={{ 
               background: activeTab === 'ott' ? gradient : 'transparent',
-              border: activeTab === 'ott' ? 'none' : "2px solid transparent",
-              backgroundImage: activeTab === 'ott' ? gradient : `linear-gradient(black, black), ${gradient}`,
-              backgroundOrigin: activeTab === 'ott' ? 'border-box' : "border-box",
-              backgroundClip: activeTab === 'ott' ? 'border-box' : "padding-box, border-box"
+              position: 'relative',
+              boxShadow: activeTab === 'ott' ? '0 0 15px rgba(54, 134, 149, 0.7)' : 'none'
             }}>
+            {activeTab !== 'ott' && (
+              <>
+                <div className="absolute inset-0 rounded-full p-[2px]" 
+                    style={{
+                      background: gradient,
+                      zIndex: -1
+                    }}
+                />
+                <div className="absolute inset-[2px] rounded-full bg-black" 
+                    style={{
+                      zIndex: -1
+                    }}
+                />
+              </>
+            )}
             OTT
           </button>
           <button 
             onClick={() => setActiveTab('media')}
-            className="px-8 py-3 rounded-full font-medium text-white min-w-[180px] transition-all duration-300" 
+            className="px-10 py-4 rounded-full font-medium text-white min-w-[200px] transition-all duration-300 text-xl relative" 
             style={{ 
               background: activeTab === 'media' ? gradient : 'transparent',
-              border: activeTab === 'media' ? 'none' : "2px solid transparent",
-              backgroundImage: activeTab === 'media' ? gradient : `linear-gradient(black, black), ${gradient}`,
-              backgroundOrigin: activeTab === 'media' ? 'border-box' : "border-box",
-              backgroundClip: activeTab === 'media' ? 'border-box' : "padding-box, border-box"
+              position: 'relative',
+              boxShadow: activeTab === 'media' ? '0 0 15px rgba(54, 134, 149, 0.7)' : 'none'
             }}>
+            {activeTab !== 'media' && (
+              <>
+                <div className="absolute inset-0 rounded-full p-[2px]" 
+                    style={{
+                      background: gradient,
+                      zIndex: -1
+                    }}
+                />
+                <div className="absolute inset-[2px] rounded-full bg-black" 
+                    style={{
+                      zIndex: -1
+                    }}
+                />
+              </>
+            )}
             Media Platforms
           </button>
         </div>
 
-        {/* Feature Cards Section */}
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {(activeTab === 'ott' ? ottContent : mediaContent).map((card, index) => (
             <div 
@@ -119,15 +145,20 @@ export default function AdativeEngagement() {
               className="rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 transition-all"
               style={{ 
                 border: "2px solid transparent",
-                backgroundImage: `linear-gradient(to bottom, #1a202c, #000), ${gradient}`,
+                backgroundImage: `linear-gradient(to bottom, #1a202c, #000), ${blueGreenGradient}`,
                 backgroundOrigin: "border-box",
-                backgroundClip: "padding-box, border-box"
+                backgroundClip: "padding-box, border-box",
+                boxShadow: '0 0 15px rgba(54, 134, 149, 0.5)'
               }}>
               <div className="h-64 bg-black relative overflow-hidden">
                 <img 
                   src={card.image}
                   alt={card.title}
                   className="w-full h-full object-cover object-center"
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '100%'
+                  }}
                   onError={(e) => {
                     e.target.onerror = null;
                     const placeholder = document.createElement('div');
@@ -162,4 +193,4 @@ export default function AdativeEngagement() {
       </div>
     </div>
   );
-} 
+}

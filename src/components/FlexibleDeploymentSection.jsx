@@ -94,7 +94,7 @@ export default function FlexibleDeploymentSection() {
         
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ 
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 p-1" style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",

@@ -149,7 +149,6 @@ export default function App() {
       {/* Eighth section - Featured On */}
       <section 
         ref={el => sectionsRef.current[7] = el}
-        className="py-16 bg-black" 
       >
         <FeaturedOnSection />
       </section>

@@ -24,7 +24,7 @@ export default function LandingPage() {
         <div className="flex items-center">
           {/* Logo space - actual logo is positioned absolutely above */}
         </div>
-        <div className="flex flex-wrap items-center gap-4 md:gap-8">
+        <div className="flex flex-wrap items-center gap-4 md:gap-8 mt-5">
           <a href="#" className="font-medium">Solutions</a>
           <a href="#" className="font-medium">Pricing</a>
           <a href="#" className="font-medium text-gray-400">Resources</a>
@@ -35,15 +35,15 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <main className="container mx-auto px-6 md:px-8 py-12 md:py-20 text-center relative z-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 max-w-4xl mx-auto py-2" style={{
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 max-w-5xl mx-auto py-2" style={{
           background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text"
         }}>
-          Transform Insights to Loyalty & Engagement
+          Turn user interactions into high-value data & revenue
         </h1>
-        <p className="text-base md:text-lg mb-12 max-w-2xl mx-auto">Turn user interactions into high-value data & revenue</p>
+        <p className="text-base md:text-lg mb-6 -mt-2 max-w-2xl mx-auto">Transform Insights to Loyalty & Engagement</p>
         <button className="px-6 py-3 rounded-full font-medium text-white" style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}>
           Join For Free
         </button>
@@ -70,7 +70,7 @@ export default function LandingPage() {
                   e.target.style.borderRadius = '8px';
                 }}
               >
-                <source src="/videos/lion-king.mp4" type="video/mp4" />
+                <source src="/Landing page/First scroll Laptop Video/Laptop video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

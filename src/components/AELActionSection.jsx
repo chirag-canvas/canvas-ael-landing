@@ -47,7 +47,7 @@ export default function AELActionSection() {
         {/* Main Content - Two Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative">
           {/* Left Column - Testimonial and Screenshot */}
-          <div className="space-y-8">
+          <div className="space-y-8 md:pr-12">
             <div className="space-y-6">
               <h3 className="text-4xl font-bold" style={{
                 background: gradient,
@@ -70,7 +70,6 @@ export default function AELActionSection() {
                   e.target.onerror = null;
                   e.target.src = "https://via.placeholder.com/600x400?text=Image+Not+Found";
                   e.target.classList.add("bg-gray-800");
-                  e.target.classList.add("object-contain");
                 }}
               />
             </div>
@@ -99,17 +98,17 @@ export default function AELActionSection() {
           </div>
 
           {/* Vertical Divider */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px -ml-8">
+          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px ml-8">
             <div className="h-full w-full" style={{ background: gradient }}></div>
           </div>
 
           {/* Right Column - Metrics */}
-          <div className="space-y-6">
+          <div className="flex flex-col items-center space-y-6 md:pl-12 top-0">
             <h3 className="text-3xl font-bold mb-8">Proven Impact Metrics</h3>
             
-            <div className="space-y-6">
+            <div className="space-y-6 max-w-md mx-auto">
               {/* Metric 1 */}
-              <div className="p-6 rounded-full border-2 border-transparent bg-black"
+              <div className="p-5 rounded-full border-2 border-transparent bg-black max-w-[350px] mx-auto"
                 style={{ 
                   border: "2px solid transparent",
                   backgroundImage: `linear-gradient(black, black), ${gradient}`,
@@ -128,7 +127,7 @@ export default function AELActionSection() {
               </div>
               
               {/* Metric 2 */}
-              <div className="p-6 rounded-full border-2 border-transparent bg-black"
+              <div className="p-5 rounded-full border-2 border-transparent bg-black max-w-[350px] mx-auto"
                 style={{ 
                   border: "2px solid transparent",
                   backgroundImage: `linear-gradient(black, black), ${gradient}`,
@@ -147,7 +146,7 @@ export default function AELActionSection() {
               </div>
               
               {/* Metric 3 */}
-              <div className="p-6 rounded-full border-2 border-transparent bg-black"
+              <div className="p-5 rounded-full border-2 border-transparent bg-black max-w-[350px] mx-auto"
                 style={{ 
                   border: "2px solid transparent",
                   backgroundImage: `linear-gradient(black, black), ${gradient}`,
