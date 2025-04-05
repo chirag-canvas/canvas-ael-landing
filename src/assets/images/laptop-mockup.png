@@ -1,0 +1,5 @@
+This is a placeholder for the laptop mockup image.
+
+Please replace this file with an actual laptop mockup image (PNG format) that shows a laptop with a black/dark screen against a gradient background.
+
+If you don't have an image ready, you can continue using the app as is. The component is set up to display a black rectangle as a fallback if the image can't be loaded. 
