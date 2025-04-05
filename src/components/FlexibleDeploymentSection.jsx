@@ -111,7 +111,7 @@ export default function FlexibleDeploymentSection() {
                 {firstSetFeatures.map((feature, index) => (
                   <div 
                     key={index}
-                    className="aspect-square rounded-3xl p-1 overflow-hidden"
+                    className="aspect-square rounded-3xl p-0.5 overflow-hidden"
                     style={{ 
                       background: gradient
                     }}
@@ -133,7 +133,7 @@ export default function FlexibleDeploymentSection() {
                 {secondSetFeatures.map((feature, index) => (
                   <div 
                     key={index}
-                    className="aspect-square rounded-3xl p-1 overflow-hidden h-[250px] md:h-[300px]"
+                    className="aspect-square rounded-3xl p-[0.5px] overflow-hidden h-[250px] md:h-[300px]"
                     style={{ 
                       background: gradient
                     }}
