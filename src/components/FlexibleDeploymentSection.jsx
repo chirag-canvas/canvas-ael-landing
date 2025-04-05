@@ -15,79 +15,46 @@ export default function FlexibleDeploymentSection() {
   
   const firstSetFeatures = [
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.8 3.9L8.1 7.7C7.9 7.9 8 8.3 8.3 8.4L13.4 10.5C13.7 10.6 13.9 10.8 13.9 11V20.2C13.9 20.5 14.2 20.7 14.5 20.5L16.9 19.2C17 19.1 17.1 19 17.1 18.8V11.6C17.1 11.4 17 11.2 16.9 11.1L10.9 3.8C10.9 3.7 10.8 3.7 10.8 3.9Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6.3 8.5C3.9 10.7 2.4 14 2.4 17.5C2.4 18.7 2.6 19.9 2.9 21" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M17.6 11C19.8 13.1 21.2 16.1 21.2 19.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
       title: "High Customization"
     },
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12.88V11.12C2 10.08 2.85 9.22 3.9 9.22C5.71 9.22 6.45 7.94 5.54 6.37C5.02 5.47 5.33 4.3 6.24 3.78L7.97 2.79C8.76 2.32 9.78 2.6 10.25 3.39L10.36 3.58C11.26 5.15 12.74 5.15 13.65 3.58L13.76 3.39C14.23 2.6 15.25 2.32 16.04 2.79L17.77 3.78C18.68 4.3 18.99 5.47 18.47 6.37C17.56 7.94 18.3 9.22 20.11 9.22C21.15 9.22 22.01 10.07 22.01 11.12V12.88C22.01 13.92 21.16 14.78 20.11 14.78C18.3 14.78 17.56 16.06 18.47 17.63C18.99 18.54 18.68 19.7 17.77 20.22L16.04 21.21C15.25 21.68 14.23 21.4 13.76 20.61L13.65 20.42C12.75 18.85 11.27 18.85 10.36 20.42L10.25 20.61C9.78 21.4 8.76 21.68 7.97 21.21L6.24 20.22C5.33 19.7 5.02 18.53 5.54 17.63C6.45 16.06 5.71 14.78 3.9 14.78C2.85 14.78 2 13.92 2 12.88Z" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
       title: "Data Security"
     },
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M8.5 12H15.5" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M12 15.5V8.5" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/Control.svg",
       title: "Control"
     },
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M7.99998 3H8.99998C7.04998 8.84 7.04998 15.16 8.99998 21H7.99998" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M15 3C16.95 8.84 16.95 15.16 15 21" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M3 16V15C8.84 16.95 15.16 16.95 21 15V16" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M3 9.0001C8.84 7.0501 15.16 7.0501 21 9.0001" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
       title: "Fast"
     }
   ];
 
   const secondSetFeatures = [
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
       title: "Faster Setup"
     },
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/Lower cost.svg",
       title: "Lower Cost"
     },
     {
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
+      icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
       title: "Scalability"
+    },
+    {
+      icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
+      title: "Versatility"
     }
   ];
 
   return (
-    <div className="bg-black text-white flex items-center justify-center px-4 md:px-8 py-8 sm:py-12 md:py-12 relative">
+    <div className="bg-black text-white flex items-center justify-center px-3 sm:px-4 md:px-8 py-6 sm:py-8 md:py-12 relative">
       {/* Background gradient effect */}
-      <div className="h-auto sm:h-[500px] md:h-[600px] w-full sm:w-[95%] lg:w-[98%] bg-[#111111] rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 backdrop-blur-sm border border-gray-800">
+      <div className="h-auto sm:h-[500px] md:h-[600px] lg:h-[650px] w-full sm:w-[95%] lg:w-[98%] bg-[#111111] rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-10 backdrop-blur-sm border border-gray-800">
         <div className="absolute inset-0 opacity-20" style={{ 
           background: 'radial-gradient(circle at 70% 50%, rgba(54, 134, 149, 0.3), transparent 60%), radial-gradient(circle at 30% 50%, rgba(110, 195, 119, 0.3), transparent 60%)'
         }}></div>
@@ -96,8 +63,8 @@ export default function FlexibleDeploymentSection() {
           filter: 'blur(100px)'
       }}></div>
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="text-center mb-6 sm:mb-10 md:mb-16">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 p-1" style={{ 
+          <div className="text-center mb-4 sm:mb-6 md:mb-10">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 p-1" style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -110,20 +77,27 @@ export default function FlexibleDeploymentSection() {
           <div className="relative">
             {/* First Set of Features */}
             <div className={`transition-opacity duration-500 ${activeSlide === 0 ? 'opacity-100 relative' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                 {firstSetFeatures.map((feature, index) => (
                   <div 
                     key={index}
-                    className="rounded-lg sm:rounded-xl md:rounded-3xl p-0.5 overflow-hidden h-[140px] sm:h-auto sm:aspect-square"
+                    className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[120px] sm:h-[140px] md:h-auto md:aspect-square" 
                     style={{ 
-                      background: gradient
+                      border: "2px solid transparent",
+                      backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,
+                      backgroundOrigin: "border-box",
+                      backgroundClip: "padding-box, border-box"
                     }}
                   >
-                    <div className="h-full w-full bg-black rounded-lg sm:rounded-xl md:rounded-3xl flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-                      <div className="mb-3 sm:mb-6 md:mb-8">
-                        {feature.icon}
+                    <div className="h-full w-full bg-black flex flex-col items-center justify-center p-3 sm:p-4 md:p-6">
+                      <div className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center">
+                        <img 
+                          src={feature.icon} 
+                          alt={feature.title} 
+                          className="w-full h-full object-contain"
+                        />
                       </div>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold">{feature.title}</h3>
+                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center">{feature.title}</h3>
                     </div>
                   </div>
                 ))}
@@ -132,20 +106,33 @@ export default function FlexibleDeploymentSection() {
 
             {/* Second Set of Features */}
             <div className={`transition-opacity duration-500 ${activeSlide === 1 ? 'opacity-100 relative' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                 {secondSetFeatures.map((feature, index) => (
                   <div 
                     key={index}
-                    className="rounded-lg sm:rounded-xl md:rounded-3xl p-0.5 overflow-hidden h-[140px] sm:h-auto sm:aspect-square"
+                    className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[120px] sm:h-[140px] md:h-auto md:aspect-square" 
                     style={{ 
-                      background: gradient
+                      border: "2px solid transparent",
+                      backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,
+                      backgroundOrigin: "border-box",
+                      backgroundClip: "padding-box, border-box"
                     }}
                   >
-                    <div className="h-full w-full bg-black rounded-lg sm:rounded-xl md:rounded-3xl flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-                      <div className="mb-3 sm:mb-6 md:mb-8">
-                        {feature.icon}
+                    <div className="h-full w-full bg-black flex flex-col items-center justify-center p-3 sm:p-4 md:p-6">
+                      <div className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 mb-2 sm:mb-3 md:mb-4 flex items-center justify-center">
+                        {feature.customIcon ? (
+                          <svg className="w-full h-full text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.7447 3.31202C13.8123 2.30302 15.3363 2.09202 16.6203 2.77802C19.0393 4.10502 18.0173 7.51002 16.2913 9.12802C16.0613 9.34702 16.1763 9.71902 16.4823 9.75602C16.5564 9.76556 16.6313 9.77218 16.7063 9.77602C17.8043 9.84102 19.2133 9.42302 19.8193 7.50502C20.1743 6.36602 19.9043 4.91902 19.0553 3.98702C18.1613 3.00602 16.8493 2.58602 15.4093 2.83602C14.3103 3.02602 13.3233 3.61402 12.5903 4.53502C12.3743 4.81102 12.4773 5.19402 12.7947 5.31502C12.8071 5.32042 12.8172 5.32876 12.8237 5.33902C12.8366 5.36232 12.8291 5.39102 12.8063 5.40502C12.7865 5.41657 12.7629 5.41944 12.7417 5.41202C12.2733 5.26002 11.7607 5.16702 11.1887 5.14902C9.73074 5.10202 8.51474 5.71902 7.67574 6.81202C7.55574 6.97602 7.51574 7.17902 7.55874 7.37102C7.56304 7.39526 7.55845 7.42007 7.54574 7.44102C7.53302 7.46196 7.51276 7.47785 7.48874 7.48602C7.40674 7.51402 7.33974 7.57802 7.30474 7.66102L3.50874 16.9C3.32974 17.322 3.77774 17.725 4.15274 17.486L5.99774 16.3C6.14674 16.205 6.33974 16.216 6.47574 16.33L8.59774 18.169C8.90574 18.437 9.38574 18.114 9.28574 17.694L6.07374 6.50802C6.0442 6.39925 6.05074 6.28517 6.09274 6.18002C6.09274 6.18002 6.09274 6.18002 6.09274 6.17902C6.16774 5.99502 6.33474 5.87002 6.51974 5.85002C6.56874 5.84402 6.61774 5.84102 6.66574 5.84302C8.26074 5.91402 9.75974 6.6 10.2097 8.24902C10.2307 8.32602 10.2847 8.38902 10.3597 8.41902C10.3858 8.43031 10.4152 8.43184 10.4427 8.42302C10.4707 8.41399 10.494 8.39512 10.5077 8.37002C11.0667 7.27402 11.9137 6.34002 12.7447 5.65002C12.8487 5.56302 12.8297 5.40402 12.7127 5.33502C12.4647 5.18802 12.5617 4.82202 12.8637 4.80402C12.9627 4.79802 13.0617 4.79402 13.1607 4.79302C13.4567 4.78802 13.5097 4.39502 13.2397 4.29402C12.8047 4.13202 12.3397 4.04802 11.8637 4.04802C10.0637 4.04802 8.51574 5.21102 7.97874 6.89602C7.94874 7.00002 7.85974 7.08102 7.75274 7.10702C7.60574 7.14302 7.48974 7.26702 7.45774 7.41702L4.11774 19.046C4.08574 19.196 4.15574 19.35 4.28474 19.434L6.74474 21.061C7.22274 21.375 7.85374 21.055 7.89274 20.489L8.09274 17.43C8.10574 17.253 8.25674 17.115 8.43474 17.115C8.53074 17.115 8.62074 17.155 8.68774 17.225L12.2447 20.878C12.2877 20.923 12.3417 20.954 12.4017 20.97C12.8007 21.052 13.1277 20.663 13.0167 20.269L12.2447 17.459C12.2087 17.322 12.2677 17.178 12.3917 17.11C12.5017 17.051 12.5467 16.923 12.5157 16.801L10.3317 8.39802C10.3087 8.30402 10.3377 8.20502 10.4037 8.13902C10.4697 8.07302 10.5697 8.04502 10.6627 8.06602C10.7407 8.08302 10.8167 8.13302 10.8537 8.20702L12.9247 12.333C13.0657 12.615 13.4387 12.65 13.6287 12.396C14.4427 11.289 15.8337 9.33102 15.9977 7.26102C16.0307 6.96702 16.0117 6.69702 15.9457 6.43602C15.8777 6.17502 15.6097 6.05302 15.3967 6.22802C14.4127 7.07502 13.2087 8.26002 13.2087 8.26002C13.1087 8.36502 12.9527 8.39302 12.8197 8.32702C12.8077 8.32163 12.7976 8.31329 12.7911 8.30302C12.7782 8.27972 12.7857 8.25102 12.8087 8.23702C12.8283 8.22547 12.8519 8.22261 12.8727 8.23002C12.8727 8.23002 15.3647 9.20802 16.5517 9.06402C17.6137 8.93602 18.0077 7.98402 17.7097 7.14502C17.1217 5.46802 14.6617 4.52502 13.6047 4.31302C13.5187 4.29802 13.4547 4.23702 13.4327 4.15302C13.4147 4.08402 13.4327 4.01302 13.4777 3.95902C13.5937 3.81902 13.7577 3.70202 13.9527 3.65102C14.5317 3.49402 15.5107 3.52102 16.0817 4.36202C16.3057 4.69702 16.2717 5.16902 15.8027 4.89402C15.4257 4.67302 15.0267 5.25002 15.4067 5.50002C15.9057 5.83202 16.5767 5.95902 16.7957 5.22502C17.0187 4.47102 16.5757 3.84702 16.1647 3.52102C15.1747 2.74402 13.8897 2.75302 12.7447 3.31202Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        ) : (
+                          <img 
+                            src={feature.icon} 
+                            alt={feature.title} 
+                            className="w-full h-full object-contain"
+                          />
+                        )}
                       </div>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold">{feature.title}</h3>
+                      <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center">{feature.title}</h3>
                     </div>
                   </div>
                 ))}
@@ -153,7 +140,7 @@ export default function FlexibleDeploymentSection() {
             </div>
 
             {/* Navigation dots */}
-            <div className="flex justify-center mt-6 sm:mt-8 md:mt-12 space-x-2">
+            <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 space-x-2 pb-2">
               {[0, 1].map((dot) => (
                 <button
                   key={dot}
