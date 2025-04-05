@@ -15,7 +15,7 @@ export default function AELActionSection() {
       title: "20% CPM Lift",
       quote: "Enhancing CPMs and ad revenue with data-rich audiences.",
       author: "CEO, Premium VOD",
-      image: "/Landing page/Our AEL in Action/CPM lift.jpg"
+      image: "/Landing page/Our AEL in Action/CPM lift.png"
     }
   ];
 

@@ -58,9 +58,9 @@ export default function FeaturedOnSection() {
   return (
     <div className="text-white py-12 sm:py-16 md:py-20 bg-black">
       <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-20">
-        <div className="rounded-xl sm:rounded-2xl py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-10 bg-[#111111]">
+        <div className="h-[400px] rounded-xl sm:rounded-2xl py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-10 bg-[#111111]">
           <div className="w-full max-w-6xl mx-auto text-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 pt-8 sm:pt-12 md:pt-20 pb-3 sm:pb-5">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:pt-12 md:pt-20 pb-3 sm:pb-5">
               <span
                 className="bg-gradient-to-r from-[#f7901e] via-[#6ec377] to-[#36538b] bg-clip-text text-transparent"
               >
@@ -68,7 +68,6 @@ export default function FeaturedOnSection() {
               </span>
             </h1>
             <div className="relative px-8 sm:px-12 md:px-16">
-              {/* Left scroll button */}
               <button 
                 onClick={scrollLeft}
                 disabled={!canScrollLeft}
@@ -115,7 +114,6 @@ export default function FeaturedOnSection() {
                 </div>
               </div>
               
-              {/* Right scroll button */}
               <button 
                 onClick={scrollRight}
                 disabled={!canScrollRight}
@@ -128,7 +126,6 @@ export default function FeaturedOnSection() {
               </button>
             </div>
             
-            {/* Add a CSS style for hiding scrollbars */}
             <style jsx="true">{`
               .hide-scrollbar::-webkit-scrollbar {
                 display: none;

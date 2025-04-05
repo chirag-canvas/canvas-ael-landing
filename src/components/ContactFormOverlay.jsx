@@ -60,7 +60,7 @@ export default function ContactFormOverlay({ isOpen, onClose }) {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://resplendent-strudel-d7b326.netlify.app/.netlify/functions/contacts', {
+      const response = await fetch('https://resplendent-strudel-d7b326.netlify.app/.netlify/functions/main-landing-page-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,6 @@ export default function ContactFormOverlay({ isOpen, onClose }) {
           jobRole: '',
           questions: ''
         });
-        // Close the form after 2 seconds of successful submission
         setTimeout(() => {
           onClose();
         }, 2000);

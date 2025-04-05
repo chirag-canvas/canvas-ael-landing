@@ -3,10 +3,10 @@ export default function WhyAELSection() {
   
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 md:px-8 py-12 relative">
-      <div className="h-[700px] w-[95%] lg:w-[98%] bg-gray-900/60 rounded-3xl p-6 md:p-10 backdrop-blur-sm border border-gray-800 flex flex-col justify-center">
+      <div className="h-[600px] w-[95%] lg:w-[98%] bg-[#111111] rounded-3xl p-6 md:p-10 backdrop-blur-sm border border-gray-800 flex flex-col justify-center">
 
       {/* Middle gradient stripe */}
-      <div className="absolute top-1/3 left-0 right-0 h-1/3 opacity-20" style={{ 
+      <div className="absolute top-1/3 left-1/4 right-1/4 h-1/3 opacity-20" style={{ 
         background: gradient,
         filter: 'blur(100px)'
       }}></div>

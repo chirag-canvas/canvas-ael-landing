@@ -87,11 +87,14 @@ export default function FlexibleDeploymentSection() {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 md:px-8 py-12 relative">
       {/* Background gradient effect */}
-      <div className="w-[95%] lg:w-[98%] bg-gray-900/60 rounded-3xl p-6 md:p-10 backdrop-blur-sm border border-gray-800">
+      <div className="h-[600px] w-[95%] lg:w-[98%] bg-[#111111] rounded-3xl p-6 md:p-10 backdrop-blur-sm border border-gray-800">
         <div className="absolute inset-0 opacity-20" style={{ 
           background: 'radial-gradient(circle at 70% 50%, rgba(54, 134, 149, 0.3), transparent 60%), radial-gradient(circle at 30% 50%, rgba(110, 195, 119, 0.3), transparent 60%)'
         }}></div>
-        
+        <div className="absolute top-1/3 left-1/4 right-1/4 h-1/3 opacity-20" style={{ 
+          background: gradient,
+          filter: 'blur(100px)'
+      }}></div>
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 p-1" style={{ 
@@ -148,10 +151,8 @@ export default function FlexibleDeploymentSection() {
                 ))}
               </div>
             </div>
-          </div>
-          
-          {/* Navigation dots */}
-          <div className="flex justify-center mt-10 space-x-2">
+            {/* Navigation dots */}
+          <div className="flex justify-center mt-12 space-x-2">
             {[0, 1].map((dot) => (
               <button
                 key={dot}
@@ -163,6 +164,9 @@ export default function FlexibleDeploymentSection() {
               />
             ))}
           </div>
+          </div>
+          
+          
         </div>
       </div>
     </div>

@@ -60,7 +60,7 @@ export default function AdaptiveEngagement() {
   return (
     <div className="min-h-screen bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 relative flex items-center justify-center">
       {/* Main Content Container with Light Black Background */}
-      <div className="w-full sm:w-[98%] lg:w-[95%] bg-gray-900/60 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 backdrop-blur-sm border border-gray-800">
+      <div className="w-full sm:w-[98%] lg:w-[95%] bg-[#111111] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 backdrop-blur-sm border border-gray-800">
         {/* Heading Section - Responsive sizes */}
         <div className="container mx-auto text-center max-w-6xl mb-8 sm:mb-12 md:mb-16">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
