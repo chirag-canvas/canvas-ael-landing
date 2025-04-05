@@ -11,181 +11,152 @@ import FooterSection from './components/FooterSection';
 import './index.css';
 
 export default function App() {
-  const scrollContainerRef = useRef(null);
-  const sectionRefs = useRef([]);
-  const [currentSection, setCurrentSection] = useState(0);
-  const totalSections = 9; // Updated to include FeaturedOnSection
+  const sectionsRef = useRef([]);
+  const [activeSection, setActiveSection] = useState(0);
+  const totalSections = 9;
   
-  // Initialize section refs
+  // Set up refs array
   useEffect(() => {
-    sectionRefs.current = sectionRefs.current.slice(0, totalSections);
-  }, [totalSections]);
-
+    sectionsRef.current = sectionsRef.current.slice(0, totalSections);
+  }, []);
+  
+  // Implement popular smooth scrolling effect
   useEffect(() => {
-    // Improved section-by-section scrolling
-    const scrollContainer = scrollContainerRef.current;
-    let isScrolling = false;
-    let scrollTimeout;
+    const sections = sectionsRef.current;
     
-    const scrollToSection = (index) => {
-      if (isScrolling) return;
+    const handleScroll = () => {
+      // Get current scroll position
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
       
-      isScrolling = true;
-      const targetIndex = Math.max(0, Math.min(totalSections - 1, index));
-      
-      if (targetIndex !== currentSection) {
-        setCurrentSection(targetIndex);
-        const targetSection = sectionRefs.current[targetIndex];
+      // Find which section should be active
+      let newActiveSection = 0;
+      sections.forEach((section, index) => {
+        if (!section) return;
         
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+        
+        // Section is active when it occupies the middle of the viewport
+        const viewportMiddle = scrollY + windowHeight / 2;
+        if (viewportMiddle >= sectionTop && viewportMiddle < sectionBottom) {
+          newActiveSection = index;
         }
-      }
+      });
       
-      scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-      }, 800);
-    };
-    
-    const handleWheel = (e) => {
-      e.preventDefault();
-      
-      // Only respond to significant wheel movements
-      if (Math.abs(e.deltaY) < 30) return;
-      
-      const direction = e.deltaY > 0 ? 1 : -1;
-      scrollToSection(currentSection + direction);
-    };
-    
-    // Touch handling
-    let touchStartY = 0;
-    let touchStartTime = 0;
-    
-    const handleTouchStart = (e) => {
-      touchStartY = e.touches[0].clientY;
-      touchStartTime = Date.now();
-    };
-    
-    const handleTouchMove = (e) => {
-      // Prevent default to stop natural scrolling
-      e.preventDefault();
-      
-      if (isScrolling) return;
-      
-      const touchY = e.touches[0].clientY;
-      const diff = touchStartY - touchY;
-      const timeDiff = Date.now() - touchStartTime;
-      
-      // Only trigger for swipes with sufficient distance and speed
-      if (Math.abs(diff) > 50 && timeDiff < 300) {
-        const direction = diff > 0 ? 1 : -1;
-        scrollToSection(currentSection + direction);
-        touchStartY = touchY;
+      if (newActiveSection !== activeSection) {
+        setActiveSection(newActiveSection);
       }
     };
     
-    // Handle keyboard navigation
+    // Handle scroll events
+    window.addEventListener('scroll', handleScroll);
+    
+    // Add keyboard navigation
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      if (e.key === 'ArrowDown') {
         e.preventDefault();
-        scrollToSection(currentSection + 1);
-      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        const nextSection = Math.min(activeSection + 1, totalSections - 1);
+        scrollToSection(nextSection);
+      } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        scrollToSection(currentSection - 1);
+        const prevSection = Math.max(activeSection - 1, 0);
+        scrollToSection(prevSection);
       }
     };
     
-    scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
-    scrollContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
-    scrollContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('keydown', handleKeyDown);
     
-    return () => {
-      scrollContainer.removeEventListener('wheel', handleWheel);
-      scrollContainer.removeEventListener('touchstart', handleTouchStart);
-      scrollContainer.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('keydown', handleKeyDown);
-      clearTimeout(scrollTimeout);
+    // Scroll to section when activeSection changes
+    const scrollToSection = (index) => {
+      const targetSection = sectionsRef.current[index];
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth'
+        });
+      }
     };
-  }, [currentSection, totalSections]);
-
+    
+    // Trigger initial check
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeSection]);
+  
   return (
-    <div 
-      ref={scrollContainerRef}
-      className="h-screen overflow-y-auto font-montserrat"
-      style={{ scrollBehavior: 'smooth' }}
-    >
+    <div className="font-montserrat">
       {/* First section - Landing Page */}
       <section 
-        ref={el => sectionRefs.current[0] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[0] = el}
+        className="min-h-screen" 
       >
         <LandingPage />
       </section>
       
       {/* Second section - Adative Engagement */}
       <section 
-        ref={el => sectionRefs.current[1] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[1] = el}
+        className="min-h-screen" 
       >
         <AdativeEngagement />
       </section>
       
       {/* Third section - Strategy Section */}
       <section 
-        ref={el => sectionRefs.current[2] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[2] = el}
+        className="min-h-screen" 
       >
         <StrategySection />
       </section>
       
       {/* Fourth section - Flexible Deployment */}
       <section 
-        ref={el => sectionRefs.current[3] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[3] = el}
+        className="min-h-screen" 
       >
         <FlexibleDeploymentSection />
       </section>
       
       {/* Fifth section - AEL Action */}
       <section 
-        ref={el => sectionRefs.current[4] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[4] = el}
+        className="min-h-screen" 
       >
         <AELActionSection />
       </section>
       
       {/* Sixth section - Why AEL */}
       <section 
-        ref={el => sectionRefs.current[5] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[5] = el}
+        className="min-h-screen" 
       >
         <WhyAELSection />
       </section>
       
       {/* Seventh section - Metrics */}
       <section 
-        ref={el => sectionRefs.current[6] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[6] = el}
+        className="min-h-screen" 
       >
         <MetricsSection />
       </section>
       
       {/* Eighth section - Featured On */}
       <section 
-        ref={el => sectionRefs.current[7] = el}
-        className="min-h-screen w-full" 
+        ref={el => sectionsRef.current[7] = el}
+        className="py-16 bg-black" 
       >
         <FeaturedOnSection />
       </section>
       
       {/* Ninth section - Footer */}
       <section 
-        ref={el => sectionRefs.current[8] = el}
-        className="w-full" 
+        ref={el => sectionsRef.current[8] = el}
       >
         <FooterSection />
       </section>

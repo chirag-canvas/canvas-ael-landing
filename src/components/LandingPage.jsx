@@ -6,15 +6,23 @@ export default function LandingPage() {
         <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-16" />
       </div>
       
-      {/* Glowing Gradient Center - Updated with new colors */}
-      <div className="absolute inset-0 flex items-center justify-center z-0">
-        <div className="w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6cc2ff] via-[#37ffb6] to-transparent opacity-60 blur-[150px]"></div>
+      {/* Improved gradient background with distinct left/right colors */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute left-0 top-0 w-1/2 h-full bg-[#6cc2ff] opacity-40 blur-[150px]"></div>
+        <div className="absolute right-0 top-0 w-1/2 h-full bg-[#37ffb6] opacity-40 blur-[150px]"></div>
+        
+        {/* Blackish blur border effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent opacity-80"></div>
+        <div className="absolute inset-0 border-[50px] border-black opacity-20 blur-[80px]"></div>
       </div>
 
       {/* Navigation */}
       <nav className="container mx-auto py-8 px-6 md:px-8 flex flex-wrap justify-between items-center relative z-10">
         <div className="flex items-center">
-          {/* Removed duplicate logo here */}
+          {/* Logo space - actual logo is positioned absolutely above */}
         </div>
         <div className="flex flex-wrap items-center gap-4 md:gap-8">
           <a href="#" className="font-medium">Solutions</a>

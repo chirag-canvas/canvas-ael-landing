@@ -17,19 +17,19 @@ export default function AdativeEngagement() {
     {
       title: "OTT PLATFORMS",
       description: "Maximize engagement & enhance CPMs with high-value data",
-      image: "/card-image-1.png",
+      image: "/Landing page/AEL for First-Party Data/OTT Platforms.jpg",
       dotColor: "bg-orange-500"
     },
     {
       title: "OVP PLATFORMS",
       description: "Optimize Streams, Maximize Insights & Deepen Retention",
-      image: "/card-image-2.png",
+      image: "/Landing page/AEL for First-Party Data/OVP.png",
       dotColor: "bg-blue-500"
     },
     {
       title: "SUBSCRIPTION MANAGEMENT PLATFORMS",
       description: "Turn Churn into Loyalty with Targeted Engagement.",
-      image: "/card-image-3.png",
+      image: "/Landing page/AEL for First-Party Data/Subscription management platform.png",
       dotColor: "bg-yellow-500"
     }
   ];
@@ -38,19 +38,19 @@ export default function AdativeEngagement() {
     {
       title: "CREATOR PLATFORMS",
       description: "Transform content into engaging experiences with data-driven insights",
-      image: "/media-card-1.png",
+      image: "/Landing page/AEL for First-Party Data/Creator platform.png",
       dotColor: "bg-purple-500"
     },
     {
       title: "VIDEO PLATFORMS",
       description: "Elevate viewer engagement with interactive experiences",
-      image: "/media-card-2.png",
+      image: "/Landing page/AEL for First-Party Data/Video platforms.png",
       dotColor: "bg-green-500"
     },
     {
       title: "AUDIO PLATFORMS",
       description: "Create immersive audio experiences with listener insights",
-      image: "/media-card-3.png",
+      image: "/Landing page/AEL for First-Party Data/Audio platform.png",
       dotColor: "bg-red-500"
     }
   ];
@@ -127,7 +127,7 @@ export default function AdativeEngagement() {
                 <img 
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   onError={(e) => {
                     e.target.onerror = null;
                     const placeholder = document.createElement('div');

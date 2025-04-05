@@ -9,13 +9,13 @@ export default function AELActionSection() {
       title: "15-20% Engagement Lift",
       quote: "Capturing first-party insights for personalization.",
       author: "CMO, Leading Content Platform",
-      image: "/images/AEL-in-action.png"
+      image: "/Landing page/Our AEL in Action/Engagement lift.png"
     },
     {
       title: "20% CPM Lift",
       quote: "Enhancing CPMs and ad revenue with data-rich audiences.",
       author: "CEO, Premium VOD",
-      image: "/images/AEL-in-action-2.png"
+      image: "/Landing page/Our AEL in Action/CPM lift.jpg"
     }
   ];
 
@@ -65,10 +65,12 @@ export default function AELActionSection() {
               <img 
                 src={testimonialsData[activeSlide].image} 
                 alt="AEL in action" 
-                className="w-full h-auto"
+                className="w-full h-auto object-cover object-center"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/AEL-in-action.png";
+                  e.target.src = "https://via.placeholder.com/600x400?text=Image+Not+Found";
+                  e.target.classList.add("bg-gray-800");
+                  e.target.classList.add("object-contain");
                 }}
               />
             </div>

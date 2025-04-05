@@ -42,9 +42,9 @@ export default function FeaturedOnSection() {
   };
   
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center text-white font-montserrat">
-      <div className="w-full max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{
+    <div className="bg-black text-white font-montserrat">
+      <div className="w-full max-w-6xl mx-auto px-4 py-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{
           background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -65,25 +65,27 @@ export default function FeaturedOnSection() {
             </svg>
           </button>
           
-          {/* Slider container */}
-          <div 
-            ref={sliderRef}
-            onScroll={handleSliderScroll}
-            className="overflow-x-auto hide-scrollbar flex space-x-8 py-4"
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
-            }}
-          >
-            {/* Logo placeholders - These will be replaced with actual logos later */}
-            {[...Array(6)].map((_, index) => (
-              <div 
-                key={index}
-                className="flex-shrink-0 w-48 h-24 bg-gray-800 rounded-lg flex items-center justify-center"
-              >
-                <p className="text-gray-400">Logo {index + 1}</p>
-              </div>
-            ))}
+          {/* Slider container with fixed width to show only 3 logos */}
+          <div className="mx-auto max-w-3xl overflow-hidden">
+            <div 
+              ref={sliderRef}
+              onScroll={handleSliderScroll}
+              className="overflow-x-auto hide-scrollbar flex space-x-8 py-4"
+              style={{
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              {/* Logo placeholders - These will be replaced with actual logos later */}
+              {[...Array(6)].map((_, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 w-56 h-28 bg-gray-800 rounded-lg flex items-center justify-center"
+                >
+                  <p className="text-gray-400">Logo {index + 1}</p>
+                </div>
+              ))}
+            </div>
           </div>
           
           {/* Right scroll button */}

@@ -4,7 +4,7 @@ export default function FooterSection() {
   return (
     <footer className="w-full bg-black text-white py-12">
       <div className="w-full px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-16">
           {/* Left Section */}
           <div className="flex flex-col items-start">
             <h3 className="text-2xl font-bold mb-6">Get Started For Free</h3>
