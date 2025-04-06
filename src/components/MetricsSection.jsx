@@ -66,12 +66,13 @@ export default function MetricsSection() {
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-10 text-white">Turn Unknown Visitors to Known Users</h3>
           
           <div className="flex justify-center">
-            <button 
-              className="px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-white text-sm sm:text-base"
+            <a 
+              href="https://canvas.space/NAB"
+              className="px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-white text-sm sm:text-base inline-block"
               style={{ background: gradient }}
             >
               Enquire Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
