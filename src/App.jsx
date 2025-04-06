@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import AdativeEngagement from './components/AdativeEngagement';
 import StrategySection from './components/StrategySection';
@@ -9,6 +10,7 @@ import AELActionSection from './components/AELActionSection';
 import FeaturedOnSection from './components/FeaturedOnSection';
 import FooterSection from './components/FooterSection';
 import ContactFormOverlay from './components/ContactFormOverlay';
+import CanvasAEMLanding from './components/nab/CanvasAEMLanding';
 import { FormProvider, useForm } from './contexts/FormContext';
 import './index.css';
 
@@ -171,10 +173,18 @@ function AppContent() {
   );
 }
 
-export default function App() {
+function App() {
   return (
-    <FormProvider>
-      <AppContent />
-    </FormProvider>
+    <Router>
+      <FormProvider>
+        <Routes>
+          <Route path="/" element={<AppContent />} />
+          <Route path="/nab" element={<CanvasAEMLanding />} caseSensitive/>
+          <Route path="/NAB" element={<CanvasAEMLanding />} caseSensitive/>
+        </Routes>
+      </FormProvider>
+    </Router>
   );
 }
+
+export default App;
