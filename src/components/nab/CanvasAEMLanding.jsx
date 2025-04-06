@@ -30,26 +30,6 @@ export default function CanvasAEMLanding() {
     return () => clearInterval(tabInterval);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = (e) => {
-      e.preventDefault();
-      const windowHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      window.scrollTo({
-        top: scrollPosition < windowHeight / 2 ? 0 : windowHeight,
-        behavior: 'smooth'
-      });
-    };
-    let timeout;
-    window.addEventListener('scroll', () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        handleScroll({ preventDefault: () => {} });
-      }, 100);
-    });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const isVideoFullScreen = () => document.fullscreenElement || document.webkitFullscreenElement;
   const exitFullscreen = () => document.exitFullscreen?.() || document.webkitExitFullscreen?.();
   const enterFullscreen = (element) => element.requestFullscreen?.() || element.webkitRequestFullscreen?.();

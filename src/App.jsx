@@ -25,7 +25,7 @@ function AppContent() {
     sectionsRef.current = sectionsRef.current.slice(0, totalSections);
   }, []);
   
-  // Implement popular smooth scrolling effect
+  // Track active section without forcing scroll
   useEffect(() => {
     const sections = sectionsRef.current;
     
@@ -73,7 +73,7 @@ function AppContent() {
     
     window.addEventListener('keydown', handleKeyDown);
     
-    // Scroll to section when activeSection changes
+    // Scroll to section for keyboard navigation only
     const scrollToSection = (index) => {
       const targetSection = sectionsRef.current[index];
       if (targetSection) {
@@ -84,14 +84,14 @@ function AppContent() {
       }
     };
     
-    // Trigger initial check
+    // Trigger initial check without forcing scroll
     handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeSection]);
+  }, [activeSection, totalSections]);
   
   return (
     <div className="font-montserrat">
