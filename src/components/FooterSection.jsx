@@ -26,9 +26,9 @@ export default function FooterSection() {
             <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started</h3>
             
             <div className="space-y-3 mb-8">
-              <a href="#" className="block text-lg text-gray-400 hover:text-white transition-colors">About</a>
-              <a href="#" className="block text-lg text-gray-400 hover:text-white transition-colors">Contact Us</a>
-              <a href="#" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</a>
+              <a href="https://canvas.space/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">About</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); openForm(); }} className="block text-lg text-gray-400 hover:text-white transition-colors">Contact Us</a>
+              <a href="https://canvas.space/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</a>
             </div>
             
             <div className={`flex ${isMobile ? 'justify-center ml-0' : 'justify-end -ml-2'} mt-14`}>
@@ -77,6 +77,7 @@ export default function FooterSection() {
             <div className={`flex ${isMobile ? 'justify-center' : 'justify-end md:pr-0'}`}>
               <div className="gradient-border-container relative">
                 <button 
+                  onClick={openForm}
                   className="px-8 py-3 rounded-full font-medium bg-transparent relative text-base"
                 >
                   <span
@@ -120,9 +121,9 @@ export default function FooterSection() {
         {/* Legal Section */}
         <div className="w-full border-t border-gray-800 pt-8">
           <div className="flex flex-wrap justify-center gap-6 mb-4">
-            <a href="#" className="text-gray-400 hover:text-white text-base">Terms & Conditions</a>
-            <a href="#" className="text-gray-400 hover:text-white text-base">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white text-base">Terms Of Use</a>
+            <a href="https://canvas.space/privacy" className="text-gray-400 hover:text-white text-base">Terms & Conditions</a>
+            <a href="https://canvas.space/privacy" className="text-gray-400 hover:text-white text-base">Privacy Policy</a>
+            <a href="https://canvas.space/privacy" className="text-gray-400 hover:text-white text-base">Terms Of Use</a>
           </div>
           
           <p className="text-center text-gray-600 text-sm pb-4">©2024 Canvas Space Inc. All Rights Reserved</p>

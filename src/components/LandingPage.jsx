@@ -56,10 +56,10 @@ export default function LandingPage() {
           </svg>
         </button>
         <div className="flex flex-col items-center gap-8 text-xl">
-          <a href="#" className="font-medium">Solutions</a>
-          <a href="#" className="font-medium">Pricing</a>
+          <a href="https://canvas.space/NAB" className="font-medium">Solutions</a>
+          <a href="https://canvas.space/NAB" className="font-medium">Pricing</a>
           <a href="#" className="font-medium text-gray-400">Resources</a>
-          <a href="#" className="font-medium">FAQ</a>
+          <a href="https://canvas.space/NAB" className="font-medium">FAQ</a>
           <button 
             onClick={() => {
               const mobileMenu = document.getElementById('mobile-menu');
@@ -83,10 +83,10 @@ export default function LandingPage() {
           <div className="w-10 sm:w-12 md:w-16"></div>
         </div>
         <div className="hidden md:flex flex-wrap items-center gap-4 lg:gap-8">
-          <a href="#" className="font-medium hover:opacity-80 transition-opacity">Solutions</a>
-          <a href="#" className="font-medium hover:opacity-80 transition-opacity">Pricing</a>
+          <a href="https://canvas.space/NAB" className="font-medium hover:opacity-80 transition-opacity">Solutions</a>
+          <a href="https://canvas.space/NAB" className="font-medium hover:opacity-80 transition-opacity">Pricing</a>
           <a href="#" className="font-medium text-gray-400 hover:text-white transition-colors">Resources</a>
-          <a href="#" className="font-medium hover:opacity-80 transition-opacity">FAQ</a>
+          <a href="https://canvas.space/NAB" className="font-medium hover:opacity-80 transition-opacity">FAQ</a>
           <button 
             onClick={openForm}
             className="px-4 py-2 lg:px-6 lg:py-2.5 rounded-full font-medium text-white whitespace-nowrap hover:opacity-90 transition-opacity" 
