@@ -1,5 +1,6 @@
 import { useForm } from '../contexts/FormContext';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FooterSection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
@@ -26,9 +27,9 @@ export default function FooterSection() {
             <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started</h3>
             
             <div className="space-y-3 mb-8">
-              <a href="https://canvas.space/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">About</a>
+              <Link to="/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">About</Link>
               <a href="#" onClick={(e) => { e.preventDefault(); openForm(); }} className="block text-lg text-gray-400 hover:text-white transition-colors">Contact Us</a>
-              <a href="https://canvas.space/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</a>
+              <Link to="/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</Link>
             </div>
             
             <div className={`flex ${isMobile ? 'justify-center ml-0' : 'justify-end -ml-2'} mt-14`}>

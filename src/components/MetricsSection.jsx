@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function MetricsSection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
   
@@ -66,13 +68,13 @@ export default function MetricsSection() {
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-10 text-white">Turn Unknown Visitors to Known Users</h3>
           
           <div className="flex justify-center">
-            <a 
-              href="https://canvas.space/NAB"
+            <Link 
+              to="/NAB"
               className="px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-white text-sm sm:text-base inline-block"
               style={{ background: gradient }}
             >
               Enquire Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
