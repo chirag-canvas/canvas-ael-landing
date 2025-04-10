@@ -17,24 +17,27 @@ export default function AdaptiveEngagement() {
 
   const ottContent = [ 
     {
-        title: "Media Companies",
-        description: "From Views to Loyalty- drive engagement and deep viewer insights",
-        image: "/Landing page/AEL for First-Party Data/Creator platform.png",
-        dotColor: "bg-purple-500"
-      },
-      {
-        title: "OVPs & CMS Platforms",
-        description: "Maximize Streams with enhanced interactivity without changing the infrastructure",
-        image: "/Landing page/AEL for First-Party Data/Video platforms.png",
-        dotColor: "bg-green-500"
-      },
-      {
-        title: "Ad-Tech & SSAI Players",
-        description: "Capture moments, enhance pre-rolls & personalise UX sensitive apps",
-        image: "/Landing page/AEL for First-Party Data/Audio platform.png",
-        dotColor: "bg-red-500"
-      }
-    ];
+      title: "Media Companies",
+      description: "From Views to Loyalty- drive engagement and deep viewer insights",
+      image: "/Landing page/AEL for First-Party Data/Creator platform.png",
+      icon: "/Landing page/Grow attention/Media companies.svg",
+      dotColor: "bg-purple-500"
+    },
+    {
+      title: "OVPs & CMS Platforms",
+      description: "Maximize Streams with enhanced interactivity without changing the infrastructure",
+      image: "/Landing page/AEL for First-Party Data/Video platforms.png",
+      icon: "/Landing page/Grow attention/OVPs and CMS.svg",
+      dotColor: "bg-green-500"
+    },
+    {
+      title: "Ad-Tech & SSAI Players",
+      description: "Capture moments, enhance pre-rolls & personalise UX sensitive apps",
+      image: "/Landing page/AEL for First-Party Data/Audio platform.png",
+      icon: "/Landing page/Grow attention/Ad-tech.svg",
+      dotColor: "bg-red-500"
+    }
+  ];
   
     
     const mediaContent = [
@@ -42,18 +45,21 @@ export default function AdaptiveEngagement() {
         title: "Subscription Management Platforms",
         description: "Optimize conversions with precise & moment-driven data",
         image: "/Landing page/AEL for First-Party Data/Subscription management platform.png",
+        icon: "/Landing page/Grow attention/Subscription.svg",
         dotColor: "bg-yellow-500"
       },
       {
         title: "FAST & Live Providers",
         description: "Enhance CPMs by adding live polls, time-gated unlocks, and more",
         image: "/Landing page/AEL for First-Party Data/OTT Platforms.jpg",
+        icon: "/Landing page/Grow attention/FAST and Live.svg",
         dotColor: "bg-orange-500"
       },
       {
         title: "Gaming & Creator Tools",
         description: "Optimize Streams, Maximize Insights & Deepen Retention",
         image: "/Landing page/AEL for First-Party Data/OVP.png",
+        icon: "/Landing page/Grow attention/Gaming and Creator.svg",
         dotColor: "bg-blue-500"
       },
       
@@ -181,7 +187,11 @@ export default function AdaptiveEngagement() {
               </div>
               <div className="p-4 sm:p-6">
                 <div className="bg-gray-800 inline-flex items-center px-3 sm:px-4 py-1 sm:py-2 rounded-full mb-2 sm:mb-4 gap-1 sm:gap-2">
-                  <span className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${card.dotColor} rounded-full`}></span>
+                  <img 
+                    src={card.icon}
+                    alt={card.title}
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  />
                   <span className="font-bold text-xs sm:text-sm" style={{ 
                     background: gradient,
                     WebkitBackgroundClip: "text",

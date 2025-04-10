@@ -11,49 +11,30 @@ export default function StrategySection() {
   const features = {
     ael: [
       {
-        icon: (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        ),
+        icon: "/Landing page/Contextual interactions/Micro Unlocks.svg",
         title: "Micro Unlocks",
         description: "Grow revenues with micropayments",
-        video: "/Landing page/AEL Built for Strategy/Data Capture Points.mp4"
+        video: "/Landing page/Contextual interactions/Micro unlocks.mp4"
       },
       {
-        icon: (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        ),
+        icon: "/Landing page/Contextual interactions/Smart Upselling.svg",
         title: "Smart Upselling",
         description: "Transform curiosity peaks to upsell opportunities",
-        video: "/Landing page/AEL Built for Strategy/Engagement Signals.mp4"
+        video: "/Landing page/Contextual interactions/Smart upselling.mp4"
       }
     ],
     aelPlus: [
       {
-        icon: (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        ),
+        icon: "/Landing page/Contextual interactions/Trust based insights.svg",
         title: "Trust-Based Insights",
         description: "Invite participation with forms, polls & codes",
-        video: "/Landing page/AEL Built for Strategy/Revenue Amplifiers.mp4"
+        video: "/Landing page/Contextual interactions/Trust-Based Insights.mp4"
       },
       {
-        icon: (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        ),
+        icon: "/Landing page/Contextual interactions/Engagment intelligence.svg",
         title: "Engagement Intelligence",
         description: "Enhance retention with quizzes & feedback",
-        video: "/Landing page/AEL Built for Strategy/AEL Suite.mp4"
+        video: "/Landing page/Contextual interactions/Engagement Intelligence.mp4"
       }
     ]
   };
@@ -73,15 +54,14 @@ export default function StrategySection() {
 
   return (
     <div className="relative bg-black text-white min-h-screen px-4 py-12 overflow-hidden">
-            {/* Gradient background */}
-            <div className="absolute inset-0 opacity-20" style={{ 
+      {/* Gradient background */}
+      <div className="absolute inset-0 opacity-20" style={{ 
         background: 'radial-gradient(circle at 70% 30%, rgba(54, 134, 149, 0.3), transparent 60%), radial-gradient(circle at 30% 70%, rgba(110, 195, 119, 0.3), transparent 60%)'
       }}></div>
 
       {/* Center radial gradient */}
       <div className="absolute left-1/2 top-1/5 transform -translate-x-1/2 -translate-y-1/2 w-[80px] sm:w-[120px] md:w-[180px] lg:w-[250px] h-[100px] sm:h-[150px] md:h-[250px] lg:h-[350px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6cc2ff] via-[#37ffb6] to-transparent opacity-40 blur-[60px] sm:blur-[80px] md:blur-[120px] lg:blur-[150px]"></div>
 
-      
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           <span className="bg-clip-text text-transparent" style={{
@@ -98,11 +78,27 @@ export default function StrategySection() {
           <span className={`text-xl font-bold ${!isAELPlus ? 'text-white' : 'text-gray-400'}`}>AEL</span>
           <button 
             onClick={() => setIsAELPlus(!isAELPlus)}
-            className="relative w-12 h-6 rounded-full bg-gray-700 transition-colors duration-200"
+            className="relative w-12 h-6 rounded-full bg-gray-800 transition-all duration-300 overflow-hidden"
+            style={{
+              boxShadow: isAELPlus ? 
+                '0 0 10px rgba(110, 195, 119, 0.5), 0 0 20px rgba(80, 143, 161, 0.3)' : 
+                '0 0 10px rgba(247, 144, 30, 0.5), 0 0 20px rgba(235, 197, 84, 0.3)'
+            }}
           >
-            <div className={`absolute w-4 h-4 rounded-full bg-white top-1 transition-transform duration-200 ${
+            <div 
+              className="absolute inset-0 opacity-50"
+              style={{
+                background: gradient,
+                filter: 'blur(8px)'
+              }}
+            ></div>
+            <div className={`absolute w-4 h-4 rounded-full bg-white top-1 transition-transform duration-300 z-10 ${
               isAELPlus ? 'translate-x-7' : 'translate-x-1'
-            }`}></div>
+            }`}
+            style={{
+              boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
+            }}
+            ></div>
           </button>
           <span className={`text-xl font-bold ${isAELPlus ? 'text-white' : 'text-gray-400'}`}>AEL+</span>
         </div>
@@ -120,11 +116,14 @@ export default function StrategySection() {
                 {activeIndex === index && (
                   <div className="absolute -left-3 top-0 w-1 h-16 bg-gradient-to-b from-[#F7901E] to-[#6EC377]"></div>
                 )}
-                <div className={`w-14 h-14 rounded-full border ${activeIndex === index ? 'border-white' : 'border-gray-600'} flex items-center justify-center bg-black/50`}>
-                  <div className={`${activeIndex === index ? 'text-white' : 'text-gray-400'}`}>
-                    {feature.icon}
-                  </div>
-                </div>
+                <img 
+                  src={feature.icon} 
+                  alt={feature.title}
+                  className={`w-12 h-12 transition-all duration-300 ${activeIndex === index ? 'opacity-100 scale-110' : 'opacity-70 hover:opacity-100'}`}
+                  style={{
+                    filter: activeIndex === index ? 'drop-shadow(0 0 8px rgba(255,255,255,0.5))' : 'none'
+                  }}
+                />
               </div>
               <div>
                 <h3 className={`text-xl font-bold mb-2 ${activeIndex === index ? 'text-white' : 'text-gray-300'}`}>

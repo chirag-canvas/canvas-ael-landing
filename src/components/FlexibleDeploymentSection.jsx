@@ -15,38 +15,38 @@ export default function FlexibleDeploymentSection() {
   
   const firstSetFeatures = [
     {
-      icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
+      icon: "/Landing page/Flexible deployment/High customization.svg",
       title: "High Customization & Flexible Deployment"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
+      icon: "/Landing page/Flexible deployment/Lightweight sdks.svg",
       title: "Lightweight SDKs & Data Security"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Control.svg",
+      icon: "/Landing page/Flexible deployment/Backend control.svg",
       title: "Backend Control with Segment Logic"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
+      icon: "/Landing page/Flexible deployment/Scalability.svg",
       title: "Faster Setup"
     }
   ];
 
   const secondSetFeatures = [
     {
-      icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
+      icon: "/Landing page/Flexible deployment/Data Security.svg",
       title: "Data Security"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Lower cost.svg",
+      icon: "/Landing page/Flexible deployment/Backend control.svg",
       title: "Backend Control with Segment Logic"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
+      icon: "/Landing page/Flexible deployment/Scalability.svg",
       title: "Fast & Seamless Setup"
     },
     {
-      icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
+      icon: "/Landing page/Flexible deployment/Scalability and agility.svg",
       title: "Scalability & Agility"
     }
   ];
