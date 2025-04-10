@@ -16,38 +16,38 @@ export default function FlexibleDeploymentSection() {
   const firstSetFeatures = [
     {
       icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
-      title: "High Customization"
+      title: "High Customization & Flexible Deployment"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
-      title: "Data Security"
+      title: "Lightweight SDKs & Data Security"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Control.svg",
-      title: "Control"
+      title: "Backend Control with Segment Logic"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
-      title: "Fast"
+      title: "Faster Setup"
     }
   ];
 
   const secondSetFeatures = [
     {
       icon: "/Landing page/Flexible deployment for every need/High Customization.svg",
-      title: "Faster Setup"
+      title: "Data Security"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Lower cost.svg",
-      title: "Lower Cost"
+      title: "Backend Control with Segment Logic"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Scalability.svg",
-      title: "Scalability"
+      title: "Fast & Seamless Setup"
     },
     {
       icon: "/Landing page/Flexible deployment for every need/Data Security.svg",
-      title: "Versatility"
+      title: "Scalability & Agility"
     }
   ];
 
@@ -63,14 +63,17 @@ export default function FlexibleDeploymentSection() {
           filter: 'blur(100px)'
       }}></div>
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="text-center mb-4 sm:mb-6 md:mb-10">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 p-1" style={{ 
+          <div className="text-center mb-4 sm:mb-6 md:mb-10 flex flex-col justify-center items-center">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-2 md:mb-3 p-1" style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text"
             }}>
               Flexible Deployment For Every Need
+            </h2>
+            <h2 className='text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl mb-3 sm:mb-4 md:mb-6 p-1'>
+            Easy overlays into any CMS, CDN, OVP, or SSAI stack
             </h2>
           </div>
 
