@@ -3,19 +3,19 @@ export default function WhyAELSection() {
   
   const features = [
     {
-      icon: "/Landing page/AEL & AEL+ The Curiosity/First Party Data Collection.svg",
+      icon: "/images/first-party-data.svg",
       title: "First Party Data Collection & Monetization"
     },
     {
-      icon: "/Landing page/AEL & AEL+ The Curiosity/Higher CPMs.svg",
+      icon: "/images/higher-cpms.svg",
       title: "Higher CPMs & Retention"
     },
     {
-      icon: "/Landing page/AEL & AEL+ The Curiosity/Personalized UX.svg",
+      icon: "/images/personalized-ux.svg",
       title: "Personalized UX"
     },
     {
-      icon: "/Landing page/AEL & AEL+ The Curiosity/Power to Power unlock.svg",
+      icon: "/images/power-unlock.svg",
       title: "Reward-to-Unlock Experiences"
     }
   ];
