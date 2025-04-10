@@ -109,13 +109,13 @@ export default function LandingPage() {
           }}>
             Turn user interactions into high-value data & revenue
           </h1>
-          <p className="text-sm sm:text-base md:text-lg mb-6 -mt-2 max-w-2xl mx-auto">Transform Insights to Loyalty & Engagement</p>
+          <p className="text-sm sm:text-base md:text-lg mb-6 -mt-2 max-w-4xl mx-auto">Moment-aware behavioral engine turning insights into loyalty and revenue</p>
           <button 
             onClick={openForm}
             className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-white hover:opacity-90 transition-opacity" 
             style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}
           >
-            Explore AEL
+            Request Demo
           </button>
 
           {/* Video Area (replacing Laptop Image) */}

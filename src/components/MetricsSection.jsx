@@ -14,7 +14,7 @@ export default function MetricsSection() {
               WebkitTextFillColor: "transparent",
               backgroundClip: "text"
             }}>
-              The Future of First-Party Engagement
+              The Next Wave of Media Engagement & Monetization
 
             </span>
           </h1>
