@@ -15,47 +15,50 @@ export default function AdaptiveEngagement() {
     return () => clearInterval(interval);
   }, []);
 
-  const ottContent = [
+  const ottContent = [ 
     {
-      title: "OTT PLATFORMS",
-      description: "Maximize engagement & enhance CPMs with high-value data",
-      image: "/Landing page/AEL for First-Party Data/OTT Platforms.jpg",
-      dotColor: "bg-orange-500"
-    },
-    {
-      title: "OVP PLATFORMS",
-      description: "Optimize Streams, Maximize Insights & Deepen Retention",
-      image: "/Landing page/AEL for First-Party Data/OVP.png",
-      dotColor: "bg-blue-500"
-    },
-    {
-      title: "SUBSCRIPTION MANAGEMENT",
-      description: "Turn Churn into Loyalty with Targeted Engagement.",
-      image: "/Landing page/AEL for First-Party Data/Subscription management platform.png",
-      dotColor: "bg-yellow-500"
-    }
-  ];
-
-  const mediaContent = [
-    {
-      title: "CREATOR PLATFORMS",
-      description: "Transform content into engaging experiences with data-driven insights",
-      image: "/Landing page/AEL for First-Party Data/Creator platform.png",
-      dotColor: "bg-purple-500"
-    },
-    {
-      title: "VIDEO PLATFORMS",
-      description: "Elevate viewer engagement with interactive experiences",
-      image: "/Landing page/AEL for First-Party Data/Video platforms.png",
-      dotColor: "bg-green-500"
-    },
-    {
-      title: "AUDIO PLATFORMS",
-      description: "Create immersive audio experiences with listener insights",
-      image: "/Landing page/AEL for First-Party Data/Audio platform.png",
-      dotColor: "bg-red-500"
-    }
-  ];
+        title: "Media Companies",
+        description: "From Views to Loyalty- drive engagement and deep viewer insights",
+        image: "/Landing page/AEL for First-Party Data/Creator platform.png",
+        dotColor: "bg-purple-500"
+      },
+      {
+        title: "OVPs & CMS Platforms",
+        description: "Maximize Streams with enhanced interactivity without changing the infrastructure",
+        image: "/Landing page/AEL for First-Party Data/Video platforms.png",
+        dotColor: "bg-green-500"
+      },
+      {
+        title: "Ad-Tech & SSAI Players",
+        description: "Capture moments, enhance pre-rolls & personalise UX sensitive apps",
+        image: "/Landing page/AEL for First-Party Data/Audio platform.png",
+        dotColor: "bg-red-500"
+      }
+    ];
+  
+    
+    const mediaContent = [
+      {
+        title: "Subscription Management Platforms",
+        description: "Optimize conversions with precise & moment-driven data",
+        image: "/Landing page/AEL for First-Party Data/Subscription management platform.png",
+        dotColor: "bg-yellow-500"
+      },
+      {
+        title: "FAST & Live Providers",
+        description: "Enhance CPMs by adding live polls, time-gated unlocks, and more",
+        image: "/Landing page/AEL for First-Party Data/OTT Platforms.jpg",
+        dotColor: "bg-orange-500"
+      },
+      {
+        title: "Gaming & Creator Tools",
+        description: "Optimize Streams, Maximize Insights & Deepen Retention",
+        image: "/Landing page/AEL for First-Party Data/OVP.png",
+        dotColor: "bg-blue-500"
+      },
+      
+    ];
+  
   
   return (
     <div className="min-h-screen bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 relative flex items-center justify-center">
@@ -70,7 +73,7 @@ export default function AdaptiveEngagement() {
               WebkitTextFillColor: "transparent",
               backgroundClip: "text"
             }}>
-              Adaptive Engagement Layer (AEL)
+              Grow Attention with Precision Engagement 
             </span>
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
@@ -80,7 +83,7 @@ export default function AdaptiveEngagement() {
               WebkitTextFillColor: "transparent",
               backgroundClip: "text"
             }}>
-              For First Party Data Collection
+              with the Adaptive Engagement Layer
             </span>
           </h2>
         </div>
@@ -110,7 +113,7 @@ export default function AdaptiveEngagement() {
                 />
               </>
             )}
-            OTT
+            Canvas AEL
           </button>
           <button 
             onClick={() => setActiveTab('media')}
@@ -135,7 +138,7 @@ export default function AdaptiveEngagement() {
                 />
               </>
             )}
-            Media Platforms
+            Canvas AEL +
           </button>
         </div>
 

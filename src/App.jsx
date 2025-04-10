@@ -11,6 +11,7 @@ import FeaturedOnSection from './components/FeaturedOnSection';
 import FooterSection from './components/FooterSection';
 import ContactFormOverlay from './components/ContactFormOverlay';
 import CanvasAEMLanding from './components/nab/CanvasAEMLanding';
+import Solutions from './components/Solutions';
 import { FormProvider, useForm } from './contexts/FormContext';
 import './index.css';
 
@@ -181,6 +182,7 @@ function App() {
           <Route path="/" element={<AppContent />} />
           <Route path="/nab" element={<CanvasAEMLanding />} caseSensitive/>
           <Route path="/NAB" element={<CanvasAEMLanding />} caseSensitive/>
+          <Route path="/solutions" element={<Solutions />} />
         </Routes>
       </FormProvider>
     </Router>
