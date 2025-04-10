@@ -104,8 +104,8 @@ export default function StrategySection() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
-        <div className="w-full md:w-1/2 space-y-8">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        <div className="w-full md:w-1/2 space-y-8 mt-10">
           {(isAELPlus ? features.aelPlus : features.ael).map((feature, index) => (
             <div 
               key={index} 
@@ -137,14 +137,14 @@ export default function StrategySection() {
           ))}
         </div>
 
-        <div className="w-full md:w-1/2 relative aspect-[4/3]">
+        <div className="w-full md:w-1/2 relative aspect-video">
           <div className="absolute inset-0">
-            <div className="absolute right-0 top-0 w-[85%] h-[85%] bg-gray-800 rounded-lg transform translate-x-10 translate-y-10"></div>
-            <div className="absolute right-0 top-0 w-[85%] h-[85%] bg-gray-700 rounded-lg transform translate-x-5 translate-y-5"></div>
-            <div className="absolute right-0 top-0 w-[85%] h-[85%] bg-gray-600 rounded-lg overflow-hidden">
+            <div className="absolute right-0 top-0 w-[95%] h-[95%] bg-gray-800 rounded-lg transform translate-x-12 translate-y-12"></div>
+            <div className="absolute right-0 top-0 w-[95%] h-[95%] bg-gray-700 rounded-lg transform translate-x-6 translate-y-6"></div>
+            <div className="absolute right-0 top-0 w-[95%] h-[95%] bg-gray-600 rounded-lg overflow-hidden">
               <video 
                 ref={videoRef}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-black"
                 playsInline
                 muted
                 loop
@@ -157,7 +157,7 @@ export default function StrategySection() {
         </div>
       </div>
 
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center mt-16">
         <button
           onClick={openForm}
           className="px-6 py-2.5 rounded-full text-white text-md font-medium transition-transform hover:scale-105"
