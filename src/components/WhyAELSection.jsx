@@ -12,14 +12,22 @@ export default function WhyAELSection() {
       }}></div>
       
       <div className="container mx-auto max-w-6xl relative z-10 py-3 sm:py-4 md:py-6">
-        <div className="text-center mb-4 sm:mb-6 md:mb-10">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 py-1 sm:py-2" style={{ 
+        <div className="text-center mb-4 sm:mb-6 md:mb-10 flex flex-col items-center justify-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-2 md:mb-3 py-1 sm:py-2" style={{ 
             background: gradient,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text"
           }}>
-            Why AEL is the future of first-party engagement?
+            AEL & AEL + 
+          </h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-2 md:mb-3 py-1 sm:py-2" style={{ 
+            background: gradient,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text"
+          }}>
+            The Curiosity-Powered Engagement & Monetization Engine you need
           </h2>
         </div>
         
@@ -92,7 +100,7 @@ export default function WhyAELSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
-              <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center">Secure & Own Your Data</h3>
+              <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-center">Reward-to-Unlock Experiences</h3>
             </div>
           </div>
         </div>
