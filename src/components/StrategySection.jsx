@@ -9,7 +9,7 @@ export default function StrategySection() {
   const gradient = "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)";
 
   const features = {
-    ael: [
+    aelPlus: [
       {
         icon: "/Landing page/Contextual interactions/Micro Unlocks.svg",
         title: "Micro Unlocks",
@@ -23,7 +23,7 @@ export default function StrategySection() {
         video: "/Landing page/Contextual interactions/Smart upselling.mp4"
       }
     ],
-    aelPlus: [
+    ael: [
       {
         icon: "/Landing page/Contextual interactions/Trust based insights.svg",
         title: "Trust-Based Insights",
