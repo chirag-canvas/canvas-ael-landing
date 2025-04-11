@@ -57,7 +57,7 @@ export default function LandingPage() {
           </svg>
         </button>
         <div className="flex flex-col items-center gap-8 text-xl">
-          <Link to="/NAB" className="font-medium">Solutions</Link>
+          <Link to="/solutions" className="font-medium">Solutions</Link>
           <Link to="/NAB" className="font-medium">Pricing</Link>
           <a href="#" className="font-medium text-gray-400">Resources</a>
           <Link to="/NAB" className="font-medium">FAQ</Link>

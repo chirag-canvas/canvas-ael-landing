@@ -113,7 +113,7 @@ export default function FlexibleDeploymentSection() {
                 {secondSetFeatures.map((feature, index) => (
                   <div 
                     key={index}
-                    className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[120px] sm:h-[140px] md:h-auto md:aspect-square" 
+                    className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[140px] sm:h-[140px] md:h-auto md:aspect-square" 
                     style={{ 
                       border: "2px solid transparent",
                       backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,

@@ -22,7 +22,7 @@ export default function MetricsSection() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-8">
           {/* Metric 1 */}
-          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[180px] sm:h-[200px] md:h-auto md:aspect-square" 
+          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[140px] sm:h-[200px] md:h-auto md:aspect-square mx-2" 
             style={{ 
               border: "2px solid transparent",
               backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,
@@ -36,7 +36,7 @@ export default function MetricsSection() {
           </div>
           
           {/* Metric 2 */}
-          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[180px] sm:h-[200px] md:h-auto md:aspect-square" 
+          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[140px] sm:h-[200px] md:h-auto md:aspect-square mx-2" 
             style={{ 
               border: "2px solid transparent",
               backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,
@@ -50,7 +50,7 @@ export default function MetricsSection() {
           </div>
           
           {/* Metric 3 */}
-          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[180px] sm:h-[200px] md:h-auto md:aspect-square" 
+          <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[140px] sm:h-[200px] md:h-auto md:aspect-square mx-2" 
             style={{ 
               border: "2px solid transparent",
               backgroundImage: `linear-gradient(to bottom, #000, #000), ${gradient}`,
