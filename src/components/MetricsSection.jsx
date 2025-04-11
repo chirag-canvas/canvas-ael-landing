@@ -6,8 +6,8 @@ export default function MetricsSection() {
   // You can adjust these values to control your card dimensions
   const cardHeight = "h-[140px]"; // For mobile
   const cardHeightSm = "sm:h-[200px]"; // For small screens
-  const cardHeightMd = "md:h-[300px]"; // For medium screens
-  const cardWidth = "w-[90%]"; // Full width by default (controlled by grid)
+  const cardHeightMd = "md:h-[300px] w-[90%]"; // For medium screens
+  const cardWidth = "w-full"; // Full width by default (controlled by grid)
   
   const metrics = [
     {
