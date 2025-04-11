@@ -28,14 +28,14 @@ export default function FlexibleDeploymentSection() {
     },
     {
       icon: "/Landing page/Flexible deployment/Scalability.svg",
-      title: "Faster Setup"
+      title: "Fast & Seamless Setup"
     }
   ];
 
   const secondSetFeatures = [
     {
-      icon: "/Landing page/Flexible deployment/Data Security.svg",
-      title: "Data Security"
+      icon: "/Landing page/Flexible deployment/Lightweight sdks.svg",
+      title: "Lightweight SDKs & Data Security"
     },
     {
       icon: "/Landing page/Flexible deployment/Backend control.svg",

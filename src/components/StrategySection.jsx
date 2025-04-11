@@ -53,7 +53,7 @@ export default function StrategySection() {
   }, [activeIndex, isAELPlus]);
 
   return (
-    <div className="relative bg-black text-white min-h-screen px-4 py-12 overflow-hidden">
+    <div className="relative bg-black text-white px-4 pt-12 pb-10 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 opacity-20" style={{ 
         background: 'radial-gradient(circle at 70% 30%, rgba(54, 134, 149, 0.3), transparent 60%), radial-gradient(circle at 30% 70%, rgba(110, 195, 119, 0.3), transparent 60%)'

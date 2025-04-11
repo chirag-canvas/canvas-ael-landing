@@ -38,7 +38,7 @@ export default function FooterSection() {
                 className="px-8 py-3 rounded-full font-medium text-white text-base"
                 style={{ background: gradient }}
               >
-                Explore AEL
+                Request Demo
               </button>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function FooterSection() {
             <a href="https://canvas.space/privacy" className="text-gray-400 hover:text-white text-base">Terms Of Use</a>
           </div>
           
-          <p className="text-center text-gray-600 text-sm pb-4">©2024 Canvas Space Inc. All Rights Reserved</p>
+          <p className="text-center text-white text-md pb-4">©2025 Canvas Space Inc. All Rights Reserved</p>
         </div>
       </div>
     </footer>
