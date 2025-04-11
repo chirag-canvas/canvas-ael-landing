@@ -7,17 +7,16 @@ export default function MetricsSection() {
     <div className="bg-black text-white flex items-center justify-center px-3 sm:px-4 md:px-8 py-6 sm:py-8 md:py-12">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-6 sm:mb-10 md:mb-16">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
-            <span style={{ 
-              background: gradient,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text"
-            }}>
-              The Next Wave of Media Engagement & Monetization
-
-            </span>
-          </h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3  px-1">
+        <span style={{ 
+          background: gradient,
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text"
+        }}>
+          The Next Wave of Media Engagement & Monetization
+        </span>
+      </h1>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-8">
