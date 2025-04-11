@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useForm } from '../contexts/FormContext';
+import { Link } from 'react-router-dom';
 
 export default function StrategySection() {
   const [isAELPlus, setIsAELPlus] = useState(false);
@@ -158,13 +159,13 @@ export default function StrategySection() {
       </div>
 
       <div className="flex justify-center mt-16">
-        <button
-          onClick={openForm}
-          className="px-6 py-2.5 rounded-full text-white text-md font-medium transition-transform hover:scale-105"
+        <Link
+          to="/NAB"
+          className="px-6 py-2.5 rounded-full text-white text-md font-medium transition-transform hover:scale-105 inline-block"
           style={{ background: gradient }}
         >
           Request Demo
-        </button>
+        </Link>
       </div>
     </div>
   );
