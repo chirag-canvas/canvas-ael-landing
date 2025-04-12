@@ -109,7 +109,7 @@ export default function LandingPage() {
           }}>
             Turn user interactions into high-value data & revenue
           </h1>
-          <p className="text-sm sm:text-base md:text-lg mb-6 -mt-2 max-w-4xl mx-auto">Moment-aware behavioral engine turning insights into loyalty and revenue</p>
+          <p className="text-sm sm:text-base md:text-lg mb-12 -mt-2 max-w-4xl mx-auto">Moment-aware behavioral engine turning insights into loyalty and revenue</p>
           <Link 
             to="/NAB"
             className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-white hover:opacity-90 transition-opacity inline-block" 
@@ -119,7 +119,7 @@ export default function LandingPage() {
           </Link>
 
           {/* Video Area (replacing Laptop Image) */}
-          <div className="mt-8 sm:mt-12 md:mt-16 relative">
+          <div className="mt-8 sm:mt-12 md:mt-14 relative">
             <div className="absolute inset-0 w-full h-full flex items-center justify-center">
               <div className="w-[80%] h-[80%] border-2 border-dashed border-blue-400 rounded-[50%] opacity-30"></div>
             </div>

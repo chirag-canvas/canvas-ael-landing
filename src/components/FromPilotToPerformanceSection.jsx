@@ -6,7 +6,7 @@ export default function FromPilotToPerformanceSection() {
         {/* <div className="w-full md:w-[95%] lg:w-[98%] bg-[#111111] rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-10 backdrop-blur-sm border border-gray-800"> */}
   
           {/* Middle background glow */}
-          <div className="absolute top-1/3 left-1/4 right-1/4 h-1/3 opacity-20" style={{
+          <div className="absolute top-1/6 left-1/4 right-1/4 h-1/2 opacity-20" style={{
             background: gradient,
             filter: 'blur(100px)'
           }}></div>
@@ -28,19 +28,19 @@ export default function FromPilotToPerformanceSection() {
               {[
                 {
                   title: "Align On Pilot Scope & Goals",
-                  icon: "/images/pilot/align.png"
+                  icon: "Landing page/From pilot to performance/Align on Pilot scope.svg"
                 },
                 {
                   title: "A/B Test, Optimize & Scale",
-                  icon: "/icons/abtest.svg"
+                  icon: "Landing page/From pilot to performance/A_B test.svg"
                 },
                 {
                   title: "Seamless Integration & Setup",
-                  icon: "/icons/unlock.svg"
+                  icon: "Landing page/From pilot to performance/Seamless integration.svg"
                 },
                 {
                   title: "Long Term Growth & Partnership",
-                  icon: "/icons/handshake.svg"
+                  icon: "Landing page/From pilot to performance/Long term growth.svg"
                 }
               ].map((card, index) => (
                 <div key={index} className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden h-[140px] sm:h-auto sm:aspect-square"

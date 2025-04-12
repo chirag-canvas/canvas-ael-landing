@@ -10,7 +10,7 @@ export default function AdaptiveEngagement() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab(prev => prev === 'ott' ? 'media' : 'ott');
-    }, 3000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -72,7 +72,7 @@ export default function AdaptiveEngagement() {
       <div className="w-full sm:w-[98%] lg:w-[95%] bg-[#111111] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 backdrop-blur-sm border border-gray-800">
         {/* Heading Section - Responsive sizes */}
         <div className="container mx-auto text-center max-w-6xl mb-8 sm:mb-12 md:mb-16">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
+          <h1 className="text-[0.9rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",
@@ -82,7 +82,7 @@ export default function AdaptiveEngagement() {
               Grow Attention with Precision Engagement 
             </span>
           </h1>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+          <h2 className="text-[0.9rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold">
             <span style={{ 
               background: gradient,
               WebkitBackgroundClip: "text",

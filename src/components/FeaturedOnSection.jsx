@@ -125,7 +125,7 @@ export default function FeaturedOnSection() {
   };
   
   return (
-    <div className="text-white py-12 sm:py-16 md:py-20 bg-black">
+    <div className="text-white py-12 sm:py-16 md:py-5 bg-[#111111]">
       <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-20">
         <div className={`${isMobile ? 'h-[350px]' : 'h-[400px]'} rounded-xl sm:rounded-2xl py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-10 bg-[#111111]`}>
           <div className="w-full max-w-6xl mx-auto text-center">

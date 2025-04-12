@@ -16,8 +16,8 @@ export default function SolutionsFirst() {
       
       {/* Improved gradient background with distinct left/right colors */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute left-0 top-0 w-1/2 h-full bg-[#6cc2ff] opacity-40 blur-[150px]"></div>
-        <div className="absolute right-0 top-0 w-1/2 h-full bg-[#37ffb6] opacity-40 blur-[150px]"></div>
+        <div className="absolute left-20 top-0 w-1/2 h-full bg-[#6cc2ff] opacity-20 blur-[70px]"></div>
+        <div className="absolute right-40 top-0 w-1/2 h-full bg-[#37ffb6] opacity-20 blur-[70px]"></div>
         
         {/* Blackish blur border effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
@@ -104,6 +104,9 @@ export default function SolutionsFirst() {
       {/* Hero Section */}
       <main className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-20 text-center relative z-10 flex-1 flex flex-col justify-center">
         <div className="md:mt-0 mt-[-40px]">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 max-w-5xl mx-auto py-2 text-center">
+        Curiosity-Powered Engagement & Monetization 
+          </h1>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 max-w-5xl mx-auto py-2 text-center">
             Canvas{" "}
             <span
@@ -117,7 +120,7 @@ export default function SolutionsFirst() {
                 Adaptive Engagement Layer
             </span>{" "}
             (AEL) For
-            </h1>
+          </h1>
 
           <p className="text-sm sm:text-base md:text-lg mb-6 -mt-2 max-w-2xl mx-auto">OTT, Broadcasters and Video Platforms</p>
 

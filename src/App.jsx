@@ -5,7 +5,6 @@ import AdativeEngagement from './components/AdativeEngagement';
 import StrategySection from './components/StrategySection';
 import FlexibleDeploymentSection from './components/FlexibleDeploymentSection';
 import WhyAELSection from './components/WhyAELSection';
-import MetricsSection from './components/MetricsSection';
 import AELActionSection from './components/AELActionSection';
 import FeaturedOnSection from './components/FeaturedOnSection';
 import FooterSection from './components/FooterSection';
@@ -18,7 +17,7 @@ import './index.css';
 function AppContent() {
   const sectionsRef = useRef([]);
   const [activeSection, setActiveSection] = useState(0);
-  const totalSections = 9;
+  const totalSections = 8;
   const { isFormOpen, closeForm } = useForm();
   
   // Set up refs array
@@ -142,14 +141,6 @@ function AppContent() {
         className="bg-black" 
       >
         <WhyAELSection />
-      </section>
-      
-      {/* Seventh section - Metrics */}
-      <section 
-        ref={el => sectionsRef.current[6] = el}
-        className="bg-black" 
-      >
-        <MetricsSection />
       </section>
       
       {/* Eighth section - Featured On */}
