@@ -387,7 +387,7 @@ export default function CanvasAELLanding() {
                 />
               </div>
               <p className="text-sm text-gray-400 my-6 italic">
-                Experience how Canvas AEL turns passive plays into active conversions.
+                Experience how Canvas SSAI turns passive plays into active conversions.
               </p>
 
               <button onClick={handleUnlockExperience} className="gradient-button">
