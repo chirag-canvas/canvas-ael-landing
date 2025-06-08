@@ -218,6 +218,15 @@
   min-height: auto;
 }
 
+/* Second Section Styles */
+.second-video-section {
+  background-color: #111111;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+}
 /* Remove these accent dots */
 .accent-dot {
   display: none;
