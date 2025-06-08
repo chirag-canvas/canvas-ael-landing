@@ -19,11 +19,37 @@ export default function CanvasAELLanding() {
   const [submitError, setSubmitError] = useState(null);
   const [activeTab, setActiveTab] = useState("ott");
 
+  const [showSSAIForm, setShowSSAIForm] = useState(false);
+  const [formSSAISubmitted, setFormSSAISubmitted] = useState(false);
+  const [jumpOverContent, setJumpOverContent] = useState(false);
+  const [unlockingSSAI, setUnlockingSSAI] = useState(false);
+  const [skipAdd, setSkipAdd] = useState(false);
+  const [showSSAIUnlockedMessage, setShowSSAIUnlockedMessage] = useState(false);
+  const [wasSSAIFullScreen, setSSAIWasFullScreen] = useState(false);
+  //const [formSSAIData, setSSAIFormData] = useState({ name: 'Canvas-user', email: '', company: 'canvas-company' });
+  function getRandomUsername() {
+    const adjectives = ['Cool', 'Smart', 'Swift', 'Brave', 'Epic'];
+    const nouns = ['Lion', 'Falcon', 'Ninja', 'Wizard', 'Samurai'];
+    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+    const randomNumber = Math.floor(Math.random() * 1000);
+    return `${randomAdjective}${randomNoun}${randomNumber}`;
+  }
+
+  const [formSSAIData, setSSAIFormData] = useState(() => ({
+    name: getRandomUsername(),
+    email: '',
+    company: 'canvas-company'
+  }));
+  const [submitSSAIError, setSSAISubmitError] = useState(null);
+
   const videoRef = useRef(null);
+  const videoSSAIRef = useRef(null);
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
   const formTimeThreshold = 10;
+  const formSSAITimeThreshold = 5;
 
   // useEffect(() => {
   //   const tabInterval = setInterval(() => {
@@ -48,6 +74,35 @@ export default function CanvasAELLanding() {
     }
   };
 
+  const handleSSAITimeUpdate = () => {
+    if(!skipAdd) {
+      if (videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI) {
+        videoSSAIRef.current.pause();
+        if (isVideoFullScreen()) {
+          setSSAIWasFullScreen(true);
+          exitFullscreen();
+        }
+        setShowSSAIForm(true);
+      } else if(formSSAISubmitted && !jumpOverContent) {
+        const video = document.getElementById('mySSAIVIdeo');
+        if (video.currentTime >= 4.30 && video.currentTime < 12.60) {
+         // video.addEventListener('timeupdate', function () {
+            setJumpOverContent(true);
+            video.currentTime = 12.70;
+        //  });
+        } else {
+          setJumpOverContent(false);
+        }
+      }
+    }
+
+    if(jumpOverContent) {
+      videoSSAIRef.current.addEventListener('ended', () => {
+        setJumpOverContent(false);
+      });
+    }
+  };
+
   const handleSeeking = () => {
     if (videoRef.current?.currentTime >= formTimeThreshold && !formSubmitted && !unlocking) {
       videoRef.current.currentTime = formTimeThreshold;
@@ -60,9 +115,61 @@ export default function CanvasAELLanding() {
     }
   };
 
+  const handleSSAISeeking = () => {
+    if(!skipAdd){
+        if (videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI) {
+          videoSSAIRef.current.currentTime = formSSAITimeThreshold;
+          videoSSAIRef.current.pause();
+          if (isVideoFullScreen()) {
+            setSSAIWasFullScreen(true);
+            exitFullscreen();
+          }
+          setShowSSAIForm(true);
+        } else if(formSSAISubmitted && !jumpOverContent) {
+          const video = document.getElementById('mySSAIVIdeo');
+          if (video.currentTime >= 4.30 && video.currentTime < 12.69) {
+            //video.addEventListener('timeupdate', function () {
+              setJumpOverContent(true);
+              video.currentTime = 12.70;
+              if (videoSSAIRef.current) videoSSAIRef.current.play();
+           // });
+          } else {
+            setJumpOverContent(false);
+          }
+        }
+      }
+      if(jumpOverContent) {
+        videoSSAIRef.current.addEventListener('ended', () => {
+          setJumpOverContent(false);
+        });
+      }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleClose = (e) => {
+    e.preventDefault();
+    setShowSSAIForm(false);
+    setSkipAdd(true);
+    //setUnlockingSSAI(false);
+    if (wasSSAIFullScreen && videoSSAIRef.current) enterFullscreen(videoSSAIRef.current);
+    try {
+      if (videoSSAIRef.current) videoSSAIRef.current.play();
+    } catch (err) {
+      if (err.name === "AbortError") {
+        console.warn("Play was interrupted by pause");
+      } else {
+        console.error("Play failed:", err);
+      }
+    }
+  };
+
+  const handleSSAIInputChange = (e) => {
+    const { name, value } = e.target;
+    setSSAIFormData({ ...formSSAIData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -80,8 +187,7 @@ export default function CanvasAELLanding() {
       });
       
       const data = await response.json();
-      console.log('Form submission successful:', data);
-      
+
       setFormSubmitted(true);
       setShowForm(false);
       setUnlocking(false);
@@ -91,6 +197,56 @@ export default function CanvasAELLanding() {
       console.error('Form submission error:', error);
       setSubmitError('Failed to submit form. Please try again.');
       setUnlocking(false);
+    }
+  };
+
+
+  const handleSSAISubmit = async (e) => {
+    e.preventDefault();
+    setUnlockingSSAI(true);
+    setSSAISubmitError(null);
+
+    try {
+      const response = await fetch('https://resplendent-strudel-d7b326.netlify.app/.netlify/functions/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formSSAIData),
+      });
+
+      const data = await response.json();
+      console.log('Form submission successful:', data);
+
+      setFormSSAISubmitted(true);
+      if (videoSSAIRef.current.currentTime >= 4.30 && videoSSAIRef.current.currentTime <= 12.70) {
+        videoSSAIRef.current.currentTime = 12.70;
+        setJumpOverContent(true);
+      } else {
+        setJumpOverContent(false);
+      }
+      setShowSSAIForm(false);
+      setUnlockingSSAI(false);
+      setSkipAdd(false);
+      if (wasSSAIFullScreen && videoSSAIRef.current) enterFullscreen(videoSSAIRef.current);
+      if (videoSSAIRef.current) videoSSAIRef.current.play();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSSAISubmitError('Failed to submit form. Please try again.');
+      setUnlockingSSAI(false);
+    }
+  };
+
+  const handleUnlockSSAIExperience = () => {
+    if (formSSAISubmitted) {
+      setShowSSAIUnlockedMessage(true);
+      setTimeout(() => setShowSSAIUnlockedMessage(false), 350);
+    } else {
+      if (videoSSAIRef.current) {
+
+        videoSSAIRef.current.pause();
+        setShowSSAIForm(true);
+      }
     }
   };
 
@@ -374,23 +530,73 @@ export default function CanvasAELLanding() {
             <div>
               <div className="video-container">
                 <video
+                    ref={videoSSAIRef}
                     src={demoSSAIVideo}
+                    id="mySSAIVIdeo"
                     className="canvas-video"
                     controls
                     autoPlay
                     muted
                     playsInline
-                    onTimeUpdate={handleTimeUpdate}
-                    onSeeking={handleSeeking}
+                    onTimeUpdate={handleSSAITimeUpdate}
+                    onSeeking={handleSSAISeeking}
                     controlsList="nodownload nopictureinpicture"
                     disablePictureInPicture
                 />
               </div>
+              {showSSAIForm && (
+                  <div className="form-overlay">
+                    <div className="overlay-content">
+                      <div className="mb-4 flex justify-center">
+                        <img
+                            src={unlocking ? UnlockIcon : LockIcon}
+                            alt={unlocking ? "Unlock Icon" : "Lock Icon"}
+                            className="overlay-icon"
+                        />
+                      </div>
+                      <h3 className="overlay-heading">
+                        {unlocking ? "Unlocking your content..." : "Enter your email to skip ads"}
+                      </h3>
+                      <form onSubmit={handleSSAISubmit} className={`form-container ${unlocking ? 'unlocking' : ''}`}>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formSSAIData.email}
+                            onChange={handleSSAIInputChange}
+                            placeholder="Your Email"
+                            className="form-input"
+                            required
+                            disabled={unlocking}
+                        />
+                        {submitSSAIError && <p className="text-red-400 text-sm">{submitSSAIError}</p>}
+                        <div className="flex justify-center">
+                          <button type="submit" className="form-button" disabled={unlocking}>
+                            {unlocking ? <div className="loading-spinner"></div> : "Submit"}
+                          </button>
+                          <button type="button" className="skip-button" onClick={handleClose}>
+                            Watch ad
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+              )}
+              {showSSAIUnlockedMessage && (
+                  <div className="form-overlay">
+                    <div className="overlay-content">
+                      <div className="mb-4 flex justify-center">
+                        <img src={UnlockIcon} alt="Unlock Icon" className="overlay-icon" style={{ width: '6rem', height: '6rem' }} />
+                      </div>
+                      <h3 className="overlay-heading">Content Already Unlocked</h3>
+                    </div>
+                  </div>
+              )}
+
               <p className="text-sm text-gray-400 my-6 italic">
                 Experience how Canvas SSAI turns passive plays into active conversions.
               </p>
 
-              <button onClick={handleUnlockExperience} className="gradient-button">
+              <button onClick={handleUnlockSSAIExperience} className="gradient-button">
                 Unlock Full Experience
               </button>
             </div>
