@@ -371,20 +371,30 @@ export default function CanvasAELLanding() {
 
       <section className="canvas-section second-video-section">
         {activeTab === "ssai" && (
-            <div className="video-container">
-              <video
-                  src={demoSSAIVideo}
-                  className="canvas-video"
-                  controls
-                  autoPlay
-                  muted
-                  playsInline
-                  onTimeUpdate={handleTimeUpdate}
-                  onSeeking={handleSeeking}
-                  controlsList="nodownload nopictureinpicture"
-                  disablePictureInPicture
-              />
+            <div>
+              <div className="video-container">
+                <video
+                    src={demoSSAIVideo}
+                    className="canvas-video"
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                    onTimeUpdate={handleTimeUpdate}
+                    onSeeking={handleSeeking}
+                    controlsList="nodownload nopictureinpicture"
+                    disablePictureInPicture
+                />
+              </div>
+              <p className="text-sm text-gray-400 my-6 italic">
+                Experience how Canvas AEL turns passive plays into active conversions.
+              </p>
+
+              <button onClick={handleUnlockExperience} className="gradient-button">
+                Unlock Full Experience
+              </button>
             </div>
+
         )}
       </section>
 
