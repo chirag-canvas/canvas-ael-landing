@@ -26,6 +26,9 @@ export default function CanvasAELLanding() {
   const [skipAdd, setSkipAdd] = useState(false);
   const [showSSAIUnlockedMessage, setShowSSAIUnlockedMessage] = useState(false);
   const [wasSSAIFullScreen, setSSAIWasFullScreen] = useState(false);
+
+  const [visibleFeedback, setVisibleFeedback] = useState(false);
+  const [selected, setSelected] = useState(null);
   //const [formSSAIData, setSSAIFormData] = useState({ name: 'Canvas-user', email: '', company: 'canvas-company' });
   function getRandomUsername() {
     const adjectives = ['Cool', 'Smart', 'Swift', 'Brave', 'Epic'];
@@ -36,6 +39,13 @@ export default function CanvasAELLanding() {
     return `${randomAdjective}${randomNoun}${randomNumber}`;
   }
 
+  const handleSelect = (emoji) => {
+    setSelected(emoji);
+    setVisibleFeedback(false);
+    videoSSAIRef.current.play();
+    // Optionally send to API here
+    console.log("Selected:", emoji);
+  };
   const [formSSAIData, setSSAIFormData] = useState(() => ({
     name: getRandomUsername(),
     email: '',
@@ -50,14 +60,6 @@ export default function CanvasAELLanding() {
   const section3Ref = useRef(null);
   const formTimeThreshold = 10;
   const formSSAITimeThreshold = 5;
-
-  // useEffect(() => {
-  //   const tabInterval = setInterval(() => {
-  //     setActiveTab(prev => prev === "ott" ? "ovp" : "ott");
-  //   }, 3000);
-  //
-  //   return () => clearInterval(tabInterval);
-  // }, []);
 
   const isVideoFullScreen = () => document.fullscreenElement || document.webkitFullscreenElement;
   const exitFullscreen = () => document.exitFullscreen?.() || document.webkitExitFullscreen?.();
@@ -76,6 +78,7 @@ export default function CanvasAELLanding() {
 
   const handleSSAITimeUpdate = () => {
     if(!skipAdd) {
+      console.log(videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI)
       if (videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI) {
         videoSSAIRef.current.pause();
         if (isVideoFullScreen()) {
@@ -95,7 +98,10 @@ export default function CanvasAELLanding() {
         }
       }
     }
-
+    if(!selected && videoSSAIRef.current?.currentTime >= 12.40 && videoSSAIRef.current?.currentTime <= 12.65){
+      videoSSAIRef.current.pause();
+      setVisibleFeedback(true);
+    }
     if(jumpOverContent) {
       videoSSAIRef.current.addEventListener('ended', () => {
         setJumpOverContent(false);
@@ -137,6 +143,11 @@ export default function CanvasAELLanding() {
             setJumpOverContent(false);
           }
         }
+      }
+
+      if(!selected && videoSSAIRef.current?.currentTime >= 12.40 && videoSSAIRef.current?.currentTime <= 12.65){
+        videoSSAIRef.current.pause();
+        setVisibleFeedback(true);
       }
       if(jumpOverContent) {
         videoSSAIRef.current.addEventListener('ended', () => {
@@ -581,6 +592,22 @@ export default function CanvasAELLanding() {
                     </div>
                   </div>
               )}
+              {
+                visibleFeedback && (<div className="form-overlay">
+                     <div className="overlay-content">
+                       <div className="mb-4 flex justify-center">
+                        <div className="feedback-popup-box">
+                          <p className="feedback-popup-question">Do you like Puma shoes?</p>
+                          <div className="feedback-emoji-options">
+                            <span onClick={() => handleSelect("happy")}>😊</span>
+                            <span onClick={() => handleSelect("neutral")}>😐</span>
+                            <span onClick={() => handleSelect("sad")}>😞</span>
+                          </div>
+                        </div>
+                     </div>
+                   </div>
+                </div>)
+              }
               {showSSAIUnlockedMessage && (
                   <div className="form-overlay">
                     <div className="overlay-content">

@@ -82,6 +82,74 @@
   object-fit: cover;
 }
 
+/** Feedback css start */
+
+.feedback-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.feedback-popup-box {
+  background-color: #1c1c1e;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-popup-question {
+  font-size: 20px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.feedback-emoji-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feedback-emoji-options span {
+  font-size: 40px; /* Bigger emoji */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.feedback-emoji-options span:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 400px) {
+  .feedback-popup-box {
+    padding: 20px;
+  }
+
+  .feedback-popup-question {
+    font-size: 18px;
+  }
+
+  .feedback-emoji-options span {
+    font-size: 36px;
+  }
+}
+
+
+/* Feedback query ends */
+
 /* Overlay styles */
 .form-overlay {
   position: fixed;
