@@ -78,7 +78,6 @@ export default function CanvasAELLanding() {
 
   const handleSSAITimeUpdate = () => {
     if(!skipAdd) {
-      console.log(videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI)
       if (videoSSAIRef.current?.currentTime >= formSSAITimeThreshold && !formSSAISubmitted && !unlockingSSAI) {
         videoSSAIRef.current.pause();
         if (isVideoFullScreen()) {
