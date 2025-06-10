@@ -61,6 +61,14 @@ export default function CanvasAELLanding() {
   const formTimeThreshold = 10;
   const formSSAITimeThreshold = 5;
 
+  useEffect(() => {
+    const tabInterval = setInterval(() => {
+      setActiveTab(prev => prev === "ott" ? "ovp" : "ott");
+    }, 3000);
+
+    return () => clearInterval(tabInterval);
+  }, []);
+
   const isVideoFullScreen = () => document.fullscreenElement || document.webkitFullscreenElement;
   const exitFullscreen = () => document.exitFullscreen?.() || document.webkitExitFullscreen?.();
   const enterFullscreen = (element) => element.requestFullscreen?.() || element.webkitRequestFullscreen?.();
@@ -382,6 +390,102 @@ export default function CanvasAELLanding() {
         </button>
       </section>
 
+      <section className="canvas-section second-video-section">
+        <p className="text-xl md:text-2xl max-w-2xl mb-8">
+          Canvas AEL now works with SSAI to turn passive streams into actionable revenue moments
+        </p>
+        {(
+            <div>
+              <div className="video-container">
+                  <video
+                      ref={videoSSAIRef}
+                      src={demoSSAIVideo}
+                      id="mySSAIVIdeo"
+                      className="canvas-video"
+                      controls
+                      autoPlay
+                      muted
+                      playsInline
+                      onTimeUpdate={handleSSAITimeUpdate}
+                      onSeeking={handleSSAISeeking}
+                      controlsList="nodownload nopictureinpicture"
+                      disablePictureInPicture
+                  />
+                {showSSAIForm && (
+                    <div className="form-overlay">
+                      <div className="overlay-content">
+                        <div className="mb-4 flex justify-center">
+                          <img
+                              src={unlocking ? UnlockIcon : LockIcon}
+                              alt={unlocking ? "Unlock Icon" : "Lock Icon"}
+                              className="overlay-icon"
+                          />
+                        </div>
+                        <h3 className="overlay-heading">
+                          {unlocking ? "Unlocking your content..." : "Enter your email to skip ads"}
+                        </h3>
+                        <form onSubmit={handleSSAISubmit} className={`form-container ${unlocking ? 'unlocking' : ''}`}>
+                          <input
+                              type="email"
+                              name="email"
+                              value={formSSAIData.email}
+                              onChange={handleSSAIInputChange}
+                              placeholder="Your Email"
+                              className="form-input"
+                              required
+                              disabled={unlocking}
+                          />
+                          {submitSSAIError && <p className="text-red-400 text-sm">{submitSSAIError}</p>}
+                          <div className="flex justify-center">
+                            <button type="submit" className="form-button" disabled={unlocking}>
+                              {unlocking ? <div className="loading-spinner"></div> : "Submit"}
+                            </button>
+                            <button type="button" className="skip-button" onClick={handleClose}>
+                              Watch ad
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                )}
+                {
+                    visibleFeedback && (<div className="form-overlay">
+                      <div className="overlay-content">
+                        <div className="mb-4 flex justify-center">
+                          <div className="feedback-popup-box">
+                            <p className="feedback-popup-question">Do you like Puma shoes?</p>
+                            <div className="feedback-emoji-options">
+                              <span onClick={() => handleSelect("happy")}>😊</span>
+                              <span onClick={() => handleSelect("neutral")}>😐</span>
+                              <span onClick={() => handleSelect("sad")}>😞</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>)
+                }
+                {showSSAIUnlockedMessage && (
+                    <div className="form-overlay">
+                      <div className="overlay-content">
+                        <div className="mb-4 flex justify-center">
+                          <img src={UnlockIcon} alt="Unlock Icon" className="overlay-icon" style={{ width: '6rem', height: '6rem' }} />
+                        </div>
+                        <h3 className="overlay-heading">Content Already Unlocked</h3>
+                      </div>
+                    </div>
+                )}
+              </div>
+                <p className="text-sm text-gray-400 my-6 italic">
+                  Experience how Canvas SSAI turns passive plays into active conversions.
+                </p>
+
+                <button onClick={handleUnlockSSAIExperience} className="gradient-button">
+                  Unlock Full Experience
+                </button>
+            </div>
+        )}
+      </section>
+
       {/* Second Section */}
       <section ref={section2Ref} className="canvas-section second-section">
         <h2 className="gradient-heading heading-secondary">
@@ -401,12 +505,6 @@ export default function CanvasAELLanding() {
               className={`tab ${activeTab === "ott" ? "tab-gradient" : "tab-outline"}`}
             >
               For OTT & SVOD/AVOD Platforms
-            </button>
-            <button
-                onClick={() => handleTabChange("ssai")}
-                className={`tab ${activeTab === "ssai" ? "tab-gradient" : "tab-outline"}`}
-            >
-              Canvas AEL + SSAI
             </button>
           </div>
 
@@ -534,102 +632,6 @@ export default function CanvasAELLanding() {
           )}
         </div>
       </section>
-
-      <section className="canvas-section second-video-section">
-        {activeTab === "ssai" && (
-            <div>
-              <div className="video-container">
-                <video
-                    ref={videoSSAIRef}
-                    src={demoSSAIVideo}
-                    id="mySSAIVIdeo"
-                    className="canvas-video"
-                    controls
-                    autoPlay
-                    muted
-                    playsInline
-                    onTimeUpdate={handleSSAITimeUpdate}
-                    onSeeking={handleSSAISeeking}
-                    controlsList="nodownload nopictureinpicture"
-                    disablePictureInPicture
-                />
-              </div>
-              {showSSAIForm && (
-                  <div className="form-overlay">
-                    <div className="overlay-content">
-                      <div className="mb-4 flex justify-center">
-                        <img
-                            src={unlocking ? UnlockIcon : LockIcon}
-                            alt={unlocking ? "Unlock Icon" : "Lock Icon"}
-                            className="overlay-icon"
-                        />
-                      </div>
-                      <h3 className="overlay-heading">
-                        {unlocking ? "Unlocking your content..." : "Enter your email to skip ads"}
-                      </h3>
-                      <form onSubmit={handleSSAISubmit} className={`form-container ${unlocking ? 'unlocking' : ''}`}>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formSSAIData.email}
-                            onChange={handleSSAIInputChange}
-                            placeholder="Your Email"
-                            className="form-input"
-                            required
-                            disabled={unlocking}
-                        />
-                        {submitSSAIError && <p className="text-red-400 text-sm">{submitSSAIError}</p>}
-                        <div className="flex justify-center">
-                          <button type="submit" className="form-button" disabled={unlocking}>
-                            {unlocking ? <div className="loading-spinner"></div> : "Submit"}
-                          </button>
-                          <button type="button" className="skip-button" onClick={handleClose}>
-                            Watch ad
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-              )}
-              {
-                visibleFeedback && (<div className="form-overlay">
-                     <div className="overlay-content">
-                       <div className="mb-4 flex justify-center">
-                        <div className="feedback-popup-box">
-                          <p className="feedback-popup-question">Do you like Puma shoes?</p>
-                          <div className="feedback-emoji-options">
-                            <span onClick={() => handleSelect("happy")}>😊</span>
-                            <span onClick={() => handleSelect("neutral")}>😐</span>
-                            <span onClick={() => handleSelect("sad")}>😞</span>
-                          </div>
-                        </div>
-                     </div>
-                   </div>
-                </div>)
-              }
-              {showSSAIUnlockedMessage && (
-                  <div className="form-overlay">
-                    <div className="overlay-content">
-                      <div className="mb-4 flex justify-center">
-                        <img src={UnlockIcon} alt="Unlock Icon" className="overlay-icon" style={{ width: '6rem', height: '6rem' }} />
-                      </div>
-                      <h3 className="overlay-heading">Content Already Unlocked</h3>
-                    </div>
-                  </div>
-              )}
-
-              <p className="text-sm text-gray-400 my-6 italic">
-                Experience how Canvas SSAI turns passive plays into active conversions.
-              </p>
-
-              <button onClick={handleUnlockSSAIExperience} className="gradient-button">
-                Unlock Full Experience
-              </button>
-            </div>
-
-        )}
-      </section>
-
       {/* Third Section - Flexibility */}
       <section ref={section3Ref} className="flexibility-section">
         <h2 className="gradient-heading heading-flexibility">Flexibility at Your Fingertips</h2>

@@ -8,7 +8,9 @@ export default function LandingPage() {
     <div className="min-h-screen bg-black relative overflow-hidden text-white font-montserrat flex flex-col">
       {/* Canvas Logo in top-left corner - responsive positioning */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-8 md:top-10 md:left-20 z-50">
-        <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-10 sm:w-12 md:w-16" />
+          <Link to="/">
+            <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-10 sm:w-12 md:w-16" />
+          </Link>
       </div>
       
       {/* Improved gradient background with distinct left/right colors */}
@@ -58,9 +60,9 @@ export default function LandingPage() {
         </button>
         <div className="flex flex-col items-center gap-8 text-xl">
           <Link to="/solutions" className="font-medium">Solutions</Link>
-          <Link to="/NAB" className="font-medium">Pricing</Link>
+          <Link to="/AEL" className="font-medium">Pricing</Link>
           <a href="#" className="font-medium text-gray-400">Resources</a>
-          <Link to="/NAB" className="font-medium">FAQ</Link>
+          <Link to="/AEL" className="font-medium">AEL</Link>
           <button 
             onClick={() => {
               const mobileMenu = document.getElementById('mobile-menu');
@@ -85,9 +87,9 @@ export default function LandingPage() {
         </div>
         <div className="hidden md:flex flex-wrap items-center gap-4 lg:gap-8">
           <Link to="/solutions" className="font-medium hover:opacity-80 transition-opacity">Solutions</Link>
-          <Link to="/NAB" className="font-medium hover:opacity-80 transition-opacity">Pricing</Link>
+          <Link to="/AEL" className="font-medium hover:opacity-80 transition-opacity">Pricing</Link>
           <a href="#" className="font-medium text-gray-400 hover:text-white transition-colors">Resources</a>
-          <Link to="/NAB" className="font-medium hover:opacity-80 transition-opacity">FAQ</Link>
+          <Link to="/AEL" className="font-medium hover:opacity-80 transition-opacity">AEL</Link>
           <button 
             onClick={openForm}
             className="px-4 py-2 lg:px-6 lg:py-2.5 rounded-full font-medium text-white whitespace-nowrap hover:opacity-90 transition-opacity" 
@@ -111,7 +113,7 @@ export default function LandingPage() {
           </h1>
           <p className="text-sm sm:text-base md:text-lg mb-12 -mt-2 max-w-4xl mx-auto">Moment-aware behavioral engine turning insights into loyalty and revenue</p>
           <Link 
-            to="/NAB"
+            to="/AEL"
             className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-white hover:opacity-90 transition-opacity inline-block" 
             style={{ background: "linear-gradient(120deg, rgb(247, 144, 30) 10%, rgb(235, 197, 84) 24%, rgb(110, 195, 119) 37%, rgb(80, 159, 161) 55.94%, rgb(54, 134, 149) 70.62%, rgb(49, 52, 142) 100%)" }}
           >

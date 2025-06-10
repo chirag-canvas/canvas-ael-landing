@@ -160,7 +160,7 @@ export default function StrategySection() {
 
       <div className="flex justify-center mt-16">
         <Link
-          to="/NAB"
+          to="/AEL"
           className="px-6 py-2.5 rounded-full text-white text-md font-medium transition-transform hover:scale-105 inline-block"
           style={{ background: gradient }}
         >

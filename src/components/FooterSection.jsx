@@ -27,14 +27,14 @@ export default function FooterSection() {
             <h3 className="text-2xl md:text-3xl font-bold mb-6">Get Started</h3>
             
             <div className="space-y-3 mb-8">
-              <Link to="/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">About</Link>
+              <Link to="/AEL" className="block text-lg text-gray-400 hover:text-white transition-colors">About</Link>
               <a href="#" onClick={(e) => { e.preventDefault(); openForm(); }} className="block text-lg text-gray-400 hover:text-white transition-colors">Contact Us</a>
-              <Link to="/NAB" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</Link>
+              <Link to="/AEL" className="block text-lg text-gray-400 hover:text-white transition-colors">Watch Demo</Link>
             </div>
             
             <div className={`flex ${isMobile ? 'justify-center ml-0' : 'justify-end -ml-2'} mt-14`}>
               <Link 
-                to="/NAB"
+                to="/AEL"
                 className="px-8 py-3 rounded-full font-medium text-white text-base inline-block"
                 style={{ background: gradient }}
               >

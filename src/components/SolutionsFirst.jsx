@@ -11,7 +11,9 @@ export default function SolutionsFirst() {
     <div className="min-h-screen bg-black relative overflow-hidden text-white font-montserrat flex flex-col">
       {/* Canvas Logo in top-left corner - responsive positioning */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-8 md:top-10 md:left-20 z-50">
-        <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-10 sm:w-12 md:w-16" />
+          <Link to="/">
+            <img src="/images/canvas-logo.svg" alt="Canvas Logo" className="w-10 sm:w-12 md:w-16" />
+          </Link>
       </div>
       
       {/* Improved gradient background with distinct left/right colors */}
@@ -60,10 +62,10 @@ export default function SolutionsFirst() {
           </svg>
         </button>
         <div className="flex flex-col items-center gap-8 text-xl">
-          <Link to="/NAB" className="font-medium">Solutions</Link>
-          <Link to="/NAB" className="font-medium">Pricing</Link>
+          <Link to="/AEL" className="font-medium">Solutions</Link>
+          <Link to="/AEL" className="font-medium">Pricing</Link>
           <a href="#" className="font-medium text-gray-400">Resources</a>
-          <Link to="/NAB" className="font-medium">FAQ</Link>
+          <Link to="/AEL" className="font-medium">AEL</Link>
           <button 
             onClick={() => {
               const mobileMenu = document.getElementById('mobile-menu');
@@ -88,9 +90,9 @@ export default function SolutionsFirst() {
         </div>
         <div className="hidden md:flex flex-wrap items-center gap-4 lg:gap-8">
           <Link to="/solutions" className="font-medium hover:opacity-80 transition-opacity">Solutions</Link>
-          <Link to="/NAB" className="font-medium hover:opacity-80 transition-opacity">Pricing</Link>
+          <Link to="/AEL" className="font-medium hover:opacity-80 transition-opacity">Pricing</Link>
           <a href="#" className="font-medium text-gray-400 hover:text-white transition-colors">Resources</a>
-          <Link to="/NAB" className="font-medium hover:opacity-80 transition-opacity">FAQ</Link>
+          <Link to="/AEL" className="font-medium hover:opacity-80 transition-opacity">AEL</Link>
           <button 
             onClick={openForm}
             className="px-4 py-2 lg:px-6 lg:py-2.5 rounded-full font-medium text-white whitespace-nowrap hover:opacity-90 transition-opacity" 
