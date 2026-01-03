@@ -13,7 +13,7 @@ const Footer = () => {
     const pathname = location.pathname.replace(/\/$/, '').toLowerCase(); // Remove trailing slash and convert to lowercase
     const isRootPage = pathname === '/' || pathname === '/publisher';
     const isInfraPage = pathname === '/infra';
-    const isTVPPage = pathname === '/tvp';
+    const isOEMPage = pathname === '/oem';
     const isEnterprisePage = pathname === '/enterprise';
     const isDSPPage = pathname === '/dsp';
     return (
@@ -28,7 +28,7 @@ const Footer = () => {
                                 ? 'Get Started'
                                 : isDSPPage
                                     ? 'Request DSP Demo'
-                                    : isTVPPage
+                                    : isOEMPage
                                         ? 'Request OEM Demo'
                                         : isInfraPage
                                             ? 'Request Infra Demo'
@@ -79,7 +79,7 @@ const Footer = () => {
                                 ? 'Canvas Space Inc.'
                                 : isDSPPage
                                     ? <>Canvas Space Inc. <br />— CTV Interaction Intelligence</>
-                                    : isTVPPage
+                                    : isOEMPage
                                         ? <>Canvas Space Inc.<br /> — Native CTV Interaction Infrastructure</>
                                         : isInfraPage
                                             ? <>Canvas Space Inc.<br />—Runtime Interaction Infrastructure for CTV</>
@@ -103,7 +103,7 @@ const Footer = () => {
                                 <p className="footer-address">
                                     Deterministic intent. In-session. At scale.
                                 </p>
-                            ) : isTVPPage ? (
+                            ) : isOEMPage ? (
                                 <p className="footer-address">
                                     One runtime. Platform-wide. Monetizable.
                                 </p>
