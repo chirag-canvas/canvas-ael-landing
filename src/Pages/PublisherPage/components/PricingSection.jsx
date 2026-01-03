@@ -21,7 +21,7 @@ const PricingSection = () => {
         },
         {
             icon: Cpm,
-            text: "CPMi model",
+            text: "CPM model",
             microCopy: "Pay for interaction, not impressions"
         },
         {

@@ -157,7 +157,7 @@ const Footer = () => {
 
                     {/* Copyright */}
                     <div className="footer-copyright">
-                        <p className="footer-copyright-text">©2025 Canvas Space Inc. All Rights Reserved</p>
+                        <p className="footer-copyright-text">©2026 Canvas Space Inc. All Rights Reserved</p>
                     </div>
                 </div>
             </div>

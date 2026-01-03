@@ -23,9 +23,9 @@ const HeroSection = () => {
             A New Interaction Signal Layer for CTV<br/>
             Built for DSPs to Optimize Beyond Impressions and CPMs
             </h1>
-            {/* <p className="hero-description">
-              Drop Canvas into your player. Trigger interactive ads<br />anywhere. Increase yield instantly.
-            </p> */}
+            <p className="hero-description">
+            Capture in-session intent signals.<br />Optimize with real interaction, not assumptions
+            </p>
             <div className="hero-cta-container">
               <CTAButton
                 name='Request Demo'

@@ -12,17 +12,17 @@ const MomentsSection = () => {
   const moments = [
     {
       video: Video1,
-      title: 'Poll inside podcast-style show',
+      title: 'Live across leading CTV & FAST environments',
       descriptor: 'Capture real-time intent during playback',
     },
     {
       video: Video2,
-      title: 'Reward ad for loyalty enrollment',
-      descriptor: 'Opt-in reward moments',
+      title: 'Opt-in reward moments',
+      descriptor: 'Exchange value for attention in-session',
     },
     {
       video: Video3,
-      title: 'Multi-choice product ad',
+      title: 'Interactive choice-based ads',
       descriptor: 'Let viewers choose. Log intent instantly.',
     },
   ];
@@ -51,10 +51,10 @@ const MomentsSection = () => {
                   playsInline
                 />
               </div>
-              <div className="moment-text-wrapper">
+              <div className={`moment-text-wrapper ${index === 0 ? 'moment-text-wrapper-first' : ''}`}>
                 <div className="moment-text-container">
-                  <p className="moment-text">{moment.title}</p>
-                  <p className="moment-descriptor">{moment.descriptor}</p>
+                  <p className={`moment-text ${index === 0 ? 'moment-text-first' : ''}`}>{moment.title}</p>
+                  <p className={`moment-descriptor ${index === 0 ? 'moment-descriptor-first' : ''}`}>{moment.descriptor}</p>
                 </div>
               </div>
             </div>
