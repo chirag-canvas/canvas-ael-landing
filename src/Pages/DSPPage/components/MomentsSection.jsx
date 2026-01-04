@@ -27,7 +27,7 @@ const MomentsSection = () => {
   return (
     <section ref={sectionRef} className={`dsp-moments-section fade-in-section ${isVisible ? 'visible' : ''}`}>
       <div className="dsp-moments-container">
-        <h2 className="dsp-moments-title">The Interaction Signals DSPs Can Finally Optimize On</h2>
+        <h2 className="dsp-moments-title">Interaction Signals DSPs Can Finally Optimize On</h2>
 
         <div
           ref={rowsRef}

@@ -115,6 +115,10 @@
     gap: 2px;
 }
 
+.solution-text-container-first {
+    transform: translateY(0px);
+}
+
 .solution-card-text {
     font-family: var(--font-family-montserrat);
     font-weight: 500;

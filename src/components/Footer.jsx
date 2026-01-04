@@ -100,21 +100,51 @@ const Footer = () => {
                                     </p>
                                 </>
                             ) : isDSPPage ? (
-                                <p className="footer-address">
-                                    Deterministic intent. In-session. At scale.
-                                </p>
+                                <>
+                                    <p className="footer-address">
+                                        Deterministic intent. In-session. At scale.
+                                    </p>
+                                    <p className="footer-address" style={{ marginTop: '12px' }}>
+                                        5548, Abington Drive, Newark,<br />
+                                        California, 94560
+                                    </p>
+                                    <p className="footer-email">
+                                        <a href="mailto:hello@canvas.space" className="footer-email-link">hello@canvas.space</a>
+                                    </p>
+                                </>
                             ) : isOEMPage ? (
-                                <p className="footer-address">
-                                    One runtime. Platform-wide. Monetizable.
-                                </p>
+                                <>
+                                    <p className="footer-address">
+                                        One runtime. Platform-wide. Monetizable.
+                                    </p>
+                                    <p className="footer-address" style={{ marginTop: '12px' }}>
+                                        5548, Abington Drive, Newark,<br />
+                                        California, 94560
+                                    </p>
+                                    <p className="footer-email">
+                                        <a href="mailto:hello@canvas.space" className="footer-email-link">hello@canvas.space</a>
+                                    </p>
+                                </>
                             ) : isInfraPage ? (
-                                <p className="footer-address">
-                                    Deterministic intent. In-session. At scale.
-                                </p>
+                                <>
+                                    <p className="footer-address">
+                                        5548, Abington Drive, Newark,<br />
+                                        California, 94560
+                                    </p>
+                                    <p className="footer-email">
+                                        <a href="mailto:hello@canvas.space" className="footer-email-link">hello@canvas.space</a>
+                                    </p>
+                                </>
                             ) : isEnterprisePage ? (
-                                <p className="footer-address">
-                                    Deterministic intent. In-session. At scale.
-                                </p>
+                                <>
+                                    <p className="footer-address">
+                                        5548, Abington Drive, Newark,<br />
+                                        California, 94560
+                                    </p>
+                                    <p className="footer-email">
+                                        <a href="mailto:hello@canvas.space" className="footer-email-link">hello@canvas.space</a>
+                                    </p>
+                                </>
                             ) : (
                                 <>
                                     <p className="footer-address">

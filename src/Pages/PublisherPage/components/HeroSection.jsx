@@ -23,7 +23,7 @@ const HeroSection = () => {
               UNLOCK HIGHER CPMs WITH <br />IN-STREAM INTERACTIVE CTV MOMENTS <br />-NO SSAI REQUIRED.
             </h1>
             <p className="hero-description">
-              Drop Canvas into your player. Trigger interactive ads<br />anywhere. Increase yield without touching SSAI or encoding.
+              Drop Canvas into your player. Trigger real-time interactive ads in-session. Increase yield without touching SSAI or encoding.
             </p>
             <div className="hero-cta-container">
               <CTAButton

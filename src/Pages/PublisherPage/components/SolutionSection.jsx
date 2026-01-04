@@ -54,13 +54,13 @@ const SolutionSection = () => {
                                 <div className="solution-icon">
                                     <img src={solution.icon} alt={solution.text} />
                                 </div>
-                                <div className="solution-text-container">
+                                <div className={`solution-text-container ${index === 0 ? 'solution-text-container-first' : ''}`}>
                                     <p className="solution-card-text">
                                         {solution.text}
                                     </p>
                                     {index === 0 && (
                                         <p className="solution-card-footnote">
-                                            vs. standard CTV ad formats
+                                            Observed across live CTV campaigns
                                         </p>
                                     )}
                                 </div>
