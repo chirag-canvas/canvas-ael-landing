@@ -6,7 +6,7 @@ import '../styles/PricingSection.css';
 import RevShare from '../../../assets/landing/revshare.svg';
 import Fee from '../../../assets/landing/fee.svg';
 import Cpm from '../../../assets/landing/sku.svg';
-import EditorImage from '../../../assets/landing/editor.png';
+import EditorVideo from '../../../assets/landing/editor.mp4';
 
 const PricingSection = () => {
     const [sectionRef, isVisible] = useScrollAnimation();
@@ -60,7 +60,7 @@ const PricingSection = () => {
                     {/* Right Column - Editor Image */}
                     <div ref={rightRef} className={`pricing-right slide-in-right ${isRightVisible ? 'visible' : ''}`}>
                         <div className="pricing-image-wrapper">
-                            <img src={EditorImage} alt="Canvas Editor Dashboard" className="pricing-editor-image" />
+                            <video src={EditorVideo} autoPlay loop muted playsInline className="pricing-editor-image" />
                         </div>
                     </div>
                 </div>
